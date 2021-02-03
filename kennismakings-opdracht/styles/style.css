@@ -50,12 +50,12 @@ form {
     padding: 2em 3em;
     max-width: 500px;
     position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
 }
 
-fieldset {
-    border: none;
-    padding: 0;
-}
+
 
 button {
     border: none;
@@ -65,7 +65,10 @@ button {
 }
 
 legend {
+    grid-column: span 2;
     font-size: 2em;
+    justify-self: center;
+    align-items: center;
     text-transform: uppercase;
     color: orange;
     letter-spacing: .1em;
@@ -171,6 +174,14 @@ form>div>p:hover>span {
 /* *********:FOCUS************ */
 /* *************************** */
 
+label::selection {
+    background-color: green;
+}
+
+legend::selection {
+    background-color: red;
+}
+
 input:focus {
     color: white;
 }
@@ -189,6 +200,14 @@ form:focus-within label {
     transform: rotate(-10deg);
 }
 
+form:focus-within label:nth-of-type(2) {
+    animation-delay: .33s;
+}
+
+form:focus-within label:nth-of-type(3) {
+    animation-delay: .66s;
+}
+
 form:focus-within input {
     animation: bounce2 .3s infinite ease-in-out;
     margin-left: 2em;
@@ -201,10 +220,6 @@ form:focus-within button {
 form:focus-within h1::first-letter {
     display: inline-block;
     animation: rotate 1s infinite linear;
-}
-
-form>fieldset>div:focus-within {
-    font-size: 1.3em;
 }
 
 form button:focus-visible {
@@ -224,28 +239,45 @@ form input:invalid {
     background-color: red;
 }
 
-form div:nth-of-type(2) div {
+form input:not(input:first-of-type),
+form label:not(label:first-of-type) {
     display: none;
-    width: 100%;
 }
 
-form div:nth-of-type(2) div>label::first-letter {
+form input:valid+label,
+form input:valid+label+input {
+    display: block;
+}
+
+form>label:nth-of-type(3):first-letter {
     color: red;
     font-size: 1.4em;
 }
 
 
-form div:nth-of-type(2) div>input {
+form>input:nth-of-type(3) {
     animation: rotate 1s infinite linear;
 }
 
-form:focus-within div:nth-of-type(2) div>input {
+form:focus-within>input:nth-of-type(3) {
     animation: rotate2 1s infinite linear;
 }
 
-form div:nth-of-type(2) input:valid~div {
-    display: block;
+form>input:nth-of-type(3):valid {
+    display: inline-block;
+    animation: fly 1s linear forwards;
 }
+
+@keyframes fly {
+    form {
+        transform: translate(0);
+    }
+
+    to {
+        transform: translate(1000px, 1000px);
+    }
+}
+
 
 @keyframes rotate {
     0% {
@@ -269,4 +301,29 @@ form div:nth-of-type(2) input:valid~div {
 
 form div:nth-of-type(1) {
     flex-wrap: nowrap;
+}
+
+body>section {
+    position: relative;
+}
+
+body>section>section {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1em;
+}
+
+code {
+    background-color: grey;
+    color: white;
+    padding: .5em;
+    display: block;
+    margin-bottom: .5em;
+    font-family: sans-serif;
+}
+
+code span {
+    color: rgb(122, 0, 0);
+
 }

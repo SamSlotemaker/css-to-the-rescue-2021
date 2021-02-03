@@ -35,24 +35,59 @@
 
     </section>
     <section id="form">
-        <form>
-            <fieldset>
-                <legend>Focus selectors!</legend>
-                <div>
-                    <label for="one">Heb je er al zin in?</label>
-                    <input id="one" type="text" required>
-                </div>
-                <div>
-                    <label for="two">Echt waar?</label>
-                    <input id="two" type="text" required>
-                    <div>
-                        <label for="">wow geheime input</label>
-                        <input type="text">
-                    </div>
-                </div>
+        <section>
 
-                <button>Submit dan</button>
-            </fieldset>
+
+
+            <code>
+                form:focus-within {
+                <span>background: orange;
+                    color: white;</span>
+                }
+
+            </code>
+            <code>
+                form:focus-within label {
+                <span> animation: bounce 1s infinite;
+                    transform: rotate(-10deg);</span>
+                }
+            </code>
+            <code>
+                label::selection {
+                <span>background-color: green;
+                    }</span>
+                }
+            </code>
+            <code>
+                form input:valid+label,
+                form input:valid+label+input {
+                <span>display: block;</span>
+                }
+            </code>
+            <code>
+                form button:focus-visible {
+                <span> color: black;
+                    background-color: white;</span>
+                }
+            </code>
+            <code>form button:focus:not(:focus-visible) {
+                <span>background-color: orange;</span>
+                }</code>
+        </section>
+        <form>
+            <legend>Focus selectors!</legend>
+
+            <label for="one">Heb je er al zin in?</label>
+            <input id="one" type="text" required>
+
+            <label for="two">Echt waar?</label>
+            <input id="two" type="text" required>
+
+            <label for="">wow geheime input</label>
+            <input type="text" required>
+
+
+            <button>Submit dan</button>
             <div>
                 <p>:focus<span>: Wanneer focus op het element staat</span></p>
                 <p>:focus-within<span>:Wanneer focus op het element OF iedereen child element staat</span></p>
