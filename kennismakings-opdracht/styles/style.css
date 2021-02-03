@@ -1,11 +1,49 @@
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     background-color: black;
     font-family: sans-serif;
 }
+
+body>section:nth-child(2) {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+body>section:nth-child(1) {
+    color: white;
+    padding: 4em;
+}
+
+body>section:nth-child(1) p:nth-of-type(1n+3) {
+    max-width: 30em;
+    margin-top: 0;
+}
+
+body>section:nth-child(1) h3 {
+    color: orange;
+    margin-bottom: .5em;
+}
+
+a {
+    display: inline-block;
+    margin-top: 1em;
+    font-size: 1.2em;
+    color: white;
+    background-color: orange;
+    padding: .5em;
+
+}
+
+
 
 form {
     background-color: white;
@@ -83,6 +121,10 @@ form button:focus-visible {
     background-color: white;
 }
 
+form button:focus:not(:focus-visible) {
+    background-color: orange;
+}
+
 form>div {
     display: block;
     padding: .3em;
@@ -102,6 +144,10 @@ form>div>p>span {
     font-weight: lighter;
     color: orange;
     opacity: 0;
+}
+
+form>fieldset>div:focus-within {
+    font-size: 1.3em;
 }
 
 form>div>p:hover>span {
@@ -157,10 +203,4 @@ form>div>p:hover>span {
         transform: translate(0, 0);
 
     }
-}
-
-section {
-    height: 100vh;
-    display: grid;
-    place-items: center;
 }
