@@ -43,8 +43,6 @@ a {
 
 }
 
-
-
 form {
     background-color: white;
     color: black;
@@ -81,49 +79,15 @@ label {
 
 form div {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-}
-
-form:focus-within {
-    background: orange;
-    color: white;
-}
-
-form:focus-within legend {
-    color: orangered;
-}
-
-form:focus-within label {
-    animation: bounce 1s infinite;
-    transform: rotate(-10deg);
-}
-
-form:focus-within input {
-    animation: bounce2 .3s infinite ease-in-out;
-    margin-left: 2em;
 }
 
 input {
     margin: 4px;
 }
 
-input:focus {
-    color: white;
-}
-
-form:focus-within button {
-    animation: bounce3 1s infinite;
-}
-
-form button:focus-visible {
-    color: black;
-    background-color: white;
-}
-
-form button:focus:not(:focus-visible) {
-    background-color: orange;
-}
 
 form>div {
     display: block;
@@ -144,10 +108,6 @@ form>div>p>span {
     font-weight: lighter;
     color: orange;
     opacity: 0;
-}
-
-form>fieldset>div:focus-within {
-    font-size: 1.3em;
 }
 
 form>div>p:hover>span {
@@ -202,5 +162,107 @@ form>div>p:hover>span {
     100% {
         transform: translate(0, 0);
 
+    }
+}
+
+
+
+/* *************************** */
+/* *********:FOCUS************ */
+/* *************************** */
+
+input:focus {
+    color: white;
+}
+
+form:focus-within {
+    background: orange;
+    color: white;
+}
+
+form:focus-within legend {
+    color: orangered;
+}
+
+form:focus-within label {
+    animation: bounce 1s infinite;
+    transform: rotate(-10deg);
+}
+
+form:focus-within input {
+    animation: bounce2 .3s infinite ease-in-out;
+    margin-left: 2em;
+}
+
+form:focus-within button {
+    animation: bounce3 1s infinite;
+}
+
+form:focus-within h1::first-letter {
+    display: inline-block;
+    animation: rotate 1s infinite linear;
+}
+
+form>fieldset>div:focus-within {
+    font-size: 1.3em;
+}
+
+form button:focus-visible {
+    color: black;
+    background-color: white;
+}
+
+form button:focus:not(:focus-visible) {
+    background-color: orange;
+}
+
+form input:valid {
+    background-color: green;
+}
+
+form input:invalid {
+    background-color: red;
+}
+
+form div:nth-of-type(2) div {
+    display: none;
+    width: 100%;
+}
+
+form div:nth-of-type(2) div>label::first-letter {
+    color: red;
+    font-size: 1.4em;
+}
+
+
+form div:nth-of-type(2) div>input {
+    animation: rotate 1s infinite linear;
+}
+
+form:focus-within div:nth-of-type(2) div>input {
+    animation: rotate2 1s infinite linear;
+}
+
+form div:nth-of-type(2) input:valid~div {
+    display: block;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate2 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
     }
 }
