@@ -13,12 +13,19 @@ form {
     font-weight: bold;
     padding: 2em 3em;
     max-width: 500px;
-
+    position: relative;
 }
 
 fieldset {
     border: none;
     padding: 0;
+}
+
+button {
+    border: none;
+    color: white;
+    background-color: black;
+    padding: .5em;
 }
 
 legend {
@@ -69,6 +76,36 @@ input:focus {
 
 form:focus-within button {
     animation: bounce3 1s infinite;
+}
+
+form button:focus-visible {
+    color: black;
+    background-color: white;
+}
+
+form>div {
+    display: block;
+    padding: .3em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    color: white;
+}
+
+form>div>p {
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+form>div>p>span {
+    font-weight: lighter;
+    color: orange;
+    opacity: 0;
+}
+
+form>div>p:hover>span {
+    opacity: 1;
 }
 
 @keyframes bounce {
