@@ -5,7 +5,9 @@
 }
 
 body {
-    padding: 5em;
+    display: grid;
+    place-items: center;
+    height: 100vh;
 }
 
 :root {
@@ -26,7 +28,7 @@ main>div {
     /* position: relative; */
     /* transform-origin: 225px 225px 225px; */
     /* transform: rotateY(60deg) rotateX(25deg); */
-    animation: testRotate2 3s linear infinite;
+    animation: testRotate 3s linear infinite;
     width: calc(var(--size)*3);
     height: calc(var(--size)*3);
 }
@@ -35,6 +37,8 @@ main>div {
 main>div>div {
     transform-style: preserve-3d;
     position: relative;
+    /* width: var(--size);
+    height: var(--size); */
 
 }
 
