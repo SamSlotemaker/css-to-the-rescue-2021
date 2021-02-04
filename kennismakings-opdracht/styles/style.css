@@ -10,6 +10,7 @@ body {
 
 header nav {
     background-color: rgb(82, 82, 82);
+    margin: 3em;
     margin-bottom: 2rem;
 }
 
@@ -240,11 +241,6 @@ form:focus-within input {
 
 form:focus-within button {
     animation: bounce3 1s infinite;
-}
-
-form:focus-within h1::first-letter {
-    display: inline-block;
-    animation: rotate 1s infinite linear;
 }
 
 form button:focus-visible {
