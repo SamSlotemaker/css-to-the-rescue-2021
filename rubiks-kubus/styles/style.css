@@ -24,7 +24,8 @@ body {
 main>div {
     transform-style: preserve-3d;
     /* position: relative; */
-    transform: rotateY(60deg) rotateX(25deg);
+    /* transform-origin: 225px 225px 225px; */
+    /* transform: rotateY(60deg) rotateX(25deg); */
     animation: testRotate2 3s linear infinite;
     width: calc(var(--size)*3);
     height: calc(var(--size)*3);
