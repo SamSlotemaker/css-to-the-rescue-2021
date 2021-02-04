@@ -8,10 +8,22 @@ body {
     display: grid;
     place-items: center;
     height: 100vh;
+    background-color: rgb(64, 129, 131);
+}
+
+main>span {
+    display: block;
+    width: calc(var(--size)*3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 10px;
+    box-shadow: 23px 10px 128px 115px rgb(0 0 0 / 52%);
 }
 
 :root {
-    --size: 120px;
+    --size: clamp(50px, 10vw, 120px);
     --offset: calc(var(--size)/2);
     --negative-offset: calc(var(--size)/2*-1);
     --rood: red;
