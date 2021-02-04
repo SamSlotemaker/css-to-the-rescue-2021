@@ -24,8 +24,9 @@ body {
 
 /* cube */
 main>div {
+    transform-origin: calc(var(--size)*1.5) calc(var(--size)*1.5) var(--size);
     transform-style: preserve-3d;
-    animation: testRotate 3s linear infinite;
+    animation: testRotate2 3s linear infinite;
     width: calc(var(--size)*3);
     height: calc(var(--size)*3);
 }
@@ -192,15 +193,15 @@ main>div>div:nth-of-type(27) {
 
 @keyframes testRotate {
     0% {
-        transform: rotateY(0deg)
+        transform: rotateX(0deg)
     }
 
     50% {
-        transform: rotateY(180deg)
+        transform: rotateX(180deg)
     }
 
     100% {
-        transform: rotateY(360deg)
+        transform: rotateX(360deg)
     }
 }
 
