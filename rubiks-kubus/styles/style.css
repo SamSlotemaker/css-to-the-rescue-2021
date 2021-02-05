@@ -5,11 +5,29 @@
 }
 
 body {
+    font-family: sans-serif;
+    color: white;
     display: grid;
     place-items: center;
     height: 100vh;
     background-color: rgb(64, 129, 131);
 }
+
+/* FORM */
+label {
+    /* font-size: 1.4em; */
+}
+
+input[type="checkbox"]:checked~div {
+    animation: testRotate2 3s linear infinite;
+}
+
+input,
+label {
+    display: inline-block;
+    transform: translate(-300px, -100px);
+}
+
 
 main>span {
     display: block;
@@ -44,14 +62,12 @@ main>span {
 
 /* cube */
 main>div {
-    /* transform-origin: calc(var(--size)*1.5) calc(var(--size)*1.5) var(--size); */
     transform-style: preserve-3d;
-    animation: testRotate2 3s linear infinite;
     /* transform: rotateY(10deg) rotateX(10deg); */
     width: calc(var(--size)*3);
     height: calc(var(--size)*3);
 
-    background-color: red
+    /* background-color: red */
 }
 
 /* cubie */
