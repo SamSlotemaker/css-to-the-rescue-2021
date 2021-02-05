@@ -10,6 +10,9 @@
 ## Live Demo
 Visit the live demo [Here](https://samslotemaker.github.io/css-to-the-rescue-2021/rubiks-kubus/)
 
+## Process
+I will describe my process in the Wiki of this repository, which you can visit [here](https://github.com/SamSlotemaker/css-to-the-rescue-2021/wiki)
+
 ## :book:Description
 CSS to the rescue is all about CSS, so in this course it is my job to create without JavaScript and find the power that CSS can bring. 
 
