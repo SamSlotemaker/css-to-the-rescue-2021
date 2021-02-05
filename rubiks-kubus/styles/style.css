@@ -26,21 +26,32 @@ main>span {
     --size: clamp(50px, 10vw, 120px);
     --offset: calc(var(--size)/2);
     --negative-offset: calc(var(--size)/2*-1);
+    /* --rood: #ff000088;
+    --blue: #0000ff88;
+    --white: #ffffff88;
+    --green: #00ff0088;
+    --orange: #ff880088;
+    --yellow: #ffff0088; */
+
     --rood: red;
     --blue: blue;
     --white: white;
     --green: green;
     --orange: orange;
     --yellow: yellow;
+
 }
 
 /* cube */
 main>div {
-    transform-origin: calc(var(--size)*1.5) calc(var(--size)*1.5) var(--size);
+    /* transform-origin: calc(var(--size)*1.5) calc(var(--size)*1.5) var(--size); */
     transform-style: preserve-3d;
     animation: testRotate2 3s linear infinite;
+    /* transform: rotateY(10deg) rotateX(10deg); */
     width: calc(var(--size)*3);
     height: calc(var(--size)*3);
+
+    background-color: red
 }
 
 /* cubie */
@@ -97,110 +108,114 @@ main>div>div>span:nth-of-type(6) {
 /* ********************** */
 
 /* bovenste rij */
+main>div>div:nth-of-type(1) {
+    transform: translateZ(calc(var(--size)*-1))
+}
+
 main>div>div:nth-of-type(2) {
-    transform: translateX(var(--size))
+    transform: translateZ(calc(var(--size)*-1)) translateX(var(--size))
 }
 
 main>div>div:nth-of-type(3) {
-    transform: translateX(calc(var(--size)*2))
+    transform: translateZ(calc(var(--size)*-1)) translateX(calc(var(--size)*2))
 }
 
 main>div>div:nth-of-type(4) {
-    transform: translateZ(var(--size))
+    /* niks, eerste blok 2e rij staat goed */
 }
 
 main>div>div:nth-of-type(5) {
-    transform: translateZ(var(--size)) translateX(var(--size))
+    transform: translateX(var(--size))
 }
 
 main>div>div:nth-of-type(6) {
-    transform: translateZ(var(--size)) translateX(calc(var(--size)*2))
+    transform: translateX(calc(var(--size)*2))
 }
 
 main>div>div:nth-of-type(7) {
-    transform: translateZ(calc(var(--size)*2))
+    transform: translateZ(calc(var(--size)))
 }
 
 main>div>div:nth-of-type(8) {
-    transform: translateZ(calc(var(--size)*2)) translateX(var(--size))
+    transform: translateZ(calc(var(--size))) translateX(var(--size))
 }
 
 main>div>div:nth-of-type(9) {
-    transform: translateZ(calc(var(--size)*2)) translateX(calc(var(--size)*2))
+    transform: translateZ(calc(var(--size))) translateX(calc(var(--size)*2))
 }
 
 /* middelste rij */
 main>div>div:nth-of-type(10) {
-    transform: translateY(var(--size))
+    transform: translateY(var(--size)) translateZ(calc(var(--size)*-1))
 }
 
 main>div>div:nth-of-type(11) {
-    transform: translateX(var(--size)) translateY(var(--size))
+    transform: translateX(var(--size)) translateY(var(--size)) translateZ(calc(var(--size)*-1))
 }
 
 main>div>div:nth-of-type(12) {
-    transform: translateX(calc(var(--size)*2)) translateY(var(--size))
+    transform: translateX(calc(var(--size)*2)) translateY(var(--size)) translateZ(calc(var(--size)*-1))
 }
 
 main>div>div:nth-of-type(13) {
-    transform: translateZ(var(--size)) translateY(var(--size))
+    transform: translateY(var(--size))
 }
 
 main>div>div:nth-of-type(14) {
-    transform: translateZ(var(--size)) translateX(var(--size)) translateY(var(--size))
+    transform: translateX(var(--size)) translateY(var(--size))
 }
 
 main>div>div:nth-of-type(15) {
-    transform: translateZ(var(--size)) translateX(calc(var(--size)*2)) translateY(var(--size))
+    transform: translateX(calc(var(--size)*2)) translateY(var(--size))
 }
 
 main>div>div:nth-of-type(16) {
-    transform: translateZ(calc(var(--size)*2)) translateY(var(--size))
+    transform: translateZ(calc(var(--size))) translateY(var(--size))
 }
 
 main>div>div:nth-of-type(17) {
-    transform: translateZ(calc(var(--size)*2)) translateX(var(--size)) translateY(var(--size))
+    transform: translateZ(calc(var(--size))) translateX(var(--size)) translateY(var(--size))
 }
 
 main>div>div:nth-of-type(18) {
-    transform: translateZ(calc(var(--size)*2)) translateX(calc(var(--size)*2)) translateY(var(--size))
+    transform: translateZ(calc(var(--size))) translateX(calc(var(--size)*2)) translateY(var(--size))
 }
 
 /* onderste rij */
 main>div>div:nth-of-type(19) {
-    transform: translateY(calc(var(--size)*2))
+    transform: translateY(calc(var(--size)*2)) translateZ(calc(var(--size)*-1))
 }
 
 main>div>div:nth-of-type(20) {
-    transform: translateX(var(--size)) translateY(calc(var(--size)*2))
+    transform: translateX(var(--size)) translateY(calc(var(--size)*2)) translateZ(calc(var(--size)*-1))
 }
 
 main>div>div:nth-of-type(21) {
-    transform: translateX(calc(var(--size)*2)) translateY(calc(var(--size)*2))
+    transform: translateX(calc(var(--size)*2)) translateY(calc(var(--size)*2)) translateZ(calc(var(--size)*-1))
 }
 
 main>div>div:nth-of-type(22) {
-    transform: translateZ(var(--size)) translateY(calc(var(--size)*2))
+    transform: translateY(calc(var(--size)*2))
 }
 
 main>div>div:nth-of-type(23) {
-    transform: translateZ(var(--size)) translateX(var(--size)) translateY(calc(var(--size)*2))
+    transform: translateX(var(--size)) translateY(calc(var(--size)*2))
 }
 
 main>div>div:nth-of-type(24) {
-    transform: translateZ(var(--size)) translateX(calc(var(--size)*2)) translateY(calc(var(--size)*2))
+    transform: translateX(calc(var(--size)*2)) translateY(calc(var(--size)*2))
 }
 
 main>div>div:nth-of-type(25) {
-    transform: translateZ(calc(var(--size)*2)) translateY(calc(var(--size)*2))
+    transform: translateZ(calc(var(--size))) translateY(calc(var(--size)*2))
 }
 
 main>div>div:nth-of-type(26) {
-    transform: translateZ(calc(var(--size)*2)) translateX(var(--size)) translateY(calc(var(--size)*2))
+    transform: translateZ(calc(var(--size))) translateX(var(--size)) translateY(calc(var(--size)*2))
 }
 
 main>div>div:nth-of-type(27) {
-    transform: translateZ(calc(var(--size)*2)) translateX(calc(var(--size)*2)) translateY(calc(var(--size)*2))
+    transform: translateZ(calc(var(--size))) translateX(calc(var(--size)*2)) translateY(calc(var(--size)*2))
 }
 
 @keyframes testRotate {
