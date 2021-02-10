@@ -1,3 +1,17 @@
+:root {
+    /* --size: clamp(50px, 10vw, 120px); */
+    --size: 100px;
+    --offset: calc(var(--size)/2);
+    --negative-offset: calc(var(--size)/2*-1);
+    --rood: red;
+    --blue: blue;
+    --white: white;
+    --green: green;
+    --orange: orange;
+    --yellow: yellow;
+}
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,19 +28,58 @@ body {
 }
 
 /* FORM */
+
 label {
-    /* font-size: 1.4em; */
+    color: #408183;
+    background-color: white;
+    font-weight: bold;
+    padding: 1em;
+    cursor: pointer;
 }
 
-input[type="checkbox"]:checked~div {
+input[type="checkbox"] {
+    position: absolute;
+    left: -100vw;
+}
+
+input[type="checkbox"]:checked+label {
+    border: #408183 2px solid;
+    background-color: orange;
+    color: white;
+    box-shadow: inset 0 0 10px #408183;
+
+}
+
+input[type="checkbox"]:first-of-type:valid~div {
     animation: testRotate2 3s linear infinite;
+}
+
+input[type="checkbox"]:nth-of-type(2):valid~div {
+    --rood: #ff000088;
+    --blue: #0000ff88;
+    --white: #ffffff88;
+    --green: #00ff0088;
+    --orange: #ff880088;
+    --yellow: #ffff0088;
 }
 
 input,
 label {
     display: inline-block;
-    transform: translate(-300px, -100px);
+    position: absolute;
+    left: 10%;
 }
+
+input:nth-of-type(1),
+label:nth-of-type(1) {
+    top: 10%;
+}
+
+input:nth-of-type(2),
+label:nth-of-type(2) {
+    top: calc(10% + 5em);
+}
+
 
 
 main>span {
@@ -40,34 +93,17 @@ main>span {
     box-shadow: 23px 10px 128px 115px rgb(0 0 0 / 52%);
 }
 
-:root {
-    --size: clamp(50px, 10vw, 120px);
-    --offset: calc(var(--size)/2);
-    --negative-offset: calc(var(--size)/2*-1);
-    --rood: #ff000088;
-    --blue: #0000ff88;
-    --white: #ffffff88;
-    --green: #00ff0088;
-    --orange: #ff880088;
-    --yellow: #ffff0088;
 
-    /* --rood: red;
-    --blue: blue;
-    --white: white;
-    --green: green;
-    --orange: orange;
-    --yellow: yellow; */
 
-}
 
 /* cube */
 main>div {
     transform-style: preserve-3d;
-    transform: rotateY(10deg) rotateX(-10deg);
+    /* transform: rotateY(10deg) rotateX(-10deg); */
     width: calc(var(--size)*3);
     height: calc(var(--size)*3);
 
-    background-color: red
+    /* background-color: red */
 }
 
 /* cubie */
@@ -123,41 +159,47 @@ main>div>div>span:nth-of-type(6) {
 /* **VERPLAATSEN CUBIESs* */
 /* ********************** */
 
+main>div>div {
+    transition: transform .3s linear;
+}
+
 /* bovenste rij */
 main>div>div:nth-of-type(1) {
-    transform: translateZ(calc(var(--size)*-1))
+    transform: rotateY(0deg) translateZ(calc(var(--size)*-1))
 }
 
 main>div>div:nth-of-type(2) {
-    transform: translateZ(calc(var(--size)*-1)) translateX(var(--size))
+    transform: rotateY(0deg) translateZ(calc(var(--size)*-1)) translateX(var(--size))
 }
 
 main>div>div:nth-of-type(3) {
-    transform: translateZ(calc(var(--size)*-1)) translateX(calc(var(--size)*2))
+    transform: rotateY(0deg) translateZ(calc(var(--size)*-1)) translateX(calc(var(--size)*2))
 }
 
 main>div>div:nth-of-type(4) {
     /* niks, eerste blok 2e rij staat goed */
+    /* transform: rotateY(0deg) translate(0); */
+    transform: translate(0, 0);
 }
 
 main>div>div:nth-of-type(5) {
-    transform: translateX(var(--size))
+    transform: rotateY(0deg) translateX(var(--size))
 }
 
 main>div>div:nth-of-type(6) {
-    transform: translateX(calc(var(--size)*2))
+    transform: rotateY(0deg) translateX(calc(var(--size)*2))
 }
 
 main>div>div:nth-of-type(7) {
-    transform: translateZ(calc(var(--size)))
+    transform: rotateY(0deg) translateZ(calc(var(--size)))
 }
 
 main>div>div:nth-of-type(8) {
-    transform: translateZ(calc(var(--size))) translateX(var(--size))
+    transform: rotateY(0deg) translateZ(calc(var(--size))) translateX(var(--size))
 }
 
 main>div>div:nth-of-type(9) {
-    transform: translateZ(calc(var(--size))) translateX(calc(var(--size)*2))
+    transform: rotateY(0deg) translateZ(calc(var(--size))) translateX(calc(var(--size)*2))
 }
 
 /* middelste rij */
@@ -203,11 +245,11 @@ main>div>div:nth-of-type(19) {
 }
 
 main>div>div:nth-of-type(20) {
-    transform: translateX(var(--size)) translateY(calc(var(--size)*2)) translateZ(calc(var(--size)*-1))
+    transform: translateY(calc(var(--size)*2)) translateX(var(--size)) translateZ(calc(var(--size)*-1))
 }
 
 main>div>div:nth-of-type(21) {
-    transform: translateX(calc(var(--size)*2)) translateY(calc(var(--size)*2)) translateZ(calc(var(--size)*-1))
+    transform: translateY(calc(var(--size)*2)) translateX(calc(var(--size)*2)) translateZ(calc(var(--size)*-1))
 }
 
 main>div>div:nth-of-type(22) {
@@ -215,23 +257,23 @@ main>div>div:nth-of-type(22) {
 }
 
 main>div>div:nth-of-type(23) {
-    transform: translateX(var(--size)) translateY(calc(var(--size)*2))
+    transform: translateY(calc(var(--size)*2)) translateX(var(--size))
 }
 
 main>div>div:nth-of-type(24) {
-    transform: translateX(calc(var(--size)*2)) translateY(calc(var(--size)*2))
+    transform: translateY(calc(var(--size)*2)) translateX(calc(var(--size)*2))
 }
 
 main>div>div:nth-of-type(25) {
-    transform: translateZ(calc(var(--size))) translateY(calc(var(--size)*2))
+    transform: translateY(calc(var(--size)*2)) translateZ(calc(var(--size)))
 }
 
 main>div>div:nth-of-type(26) {
-    transform: translateZ(calc(var(--size))) translateX(var(--size)) translateY(calc(var(--size)*2))
+    transform: translateY(calc(var(--size)*2)) translateZ(calc(var(--size))) translateX(var(--size))
 }
 
 main>div>div:nth-of-type(27) {
-    transform: translateZ(calc(var(--size))) translateX(calc(var(--size)*2)) translateY(calc(var(--size)*2))
+    transform: translateY(calc(var(--size)*2)) translateZ(calc(var(--size))) translateX(calc(var(--size)*2))
 }
 
 @keyframes testRotate {
@@ -255,5 +297,128 @@ main>div>div:nth-of-type(27) {
 
     to {
         transform: rotate3d(1, 1, 1, 360deg);
+    }
+}
+
+@media screen and (min-width: 800px) {
+
+    /* bovenste rij */
+    main>div>div:nth-of-type(1) {
+        transform: rotateY(90deg) translateZ(calc(var(--size)*-1))
+    }
+
+    main>div>div:nth-of-type(2) {
+        transform: rotateY(90deg) translateZ(calc(var(--size)*-1)) translateX(var(--size))
+    }
+
+    main>div>div:nth-of-type(3) {
+        transform: rotateY(90deg) translateZ(calc(var(--size)*-1)) translateX(calc(var(--size)*2))
+    }
+
+    main>div>div:nth-of-type(4) {
+        /* niks, eerste blok 2e rij staat goed */
+        transform: rotateY(90deg) translate(0, 0);
+    }
+
+    main>div>div:nth-of-type(5) {
+        transform: rotateY(90deg) translateX(var(--size));
+    }
+
+    main>div>div:nth-of-type(6) {
+        transform: rotateY(90deg) translateX(calc(var(--size)*2))
+    }
+
+    main>div>div:nth-of-type(7) {
+        transform: rotateY(90deg) translateZ(calc(var(--size)))
+    }
+
+    main>div>div:nth-of-type(8) {
+        transform: rotateY(90deg)translateZ(calc(var(--size))) translateX(var(--size))
+    }
+
+    main>div>div:nth-of-type(9) {
+        transform: rotateY(90deg)translateZ(calc(var(--size))) translateX(calc(var(--size)*2))
+    }
+
+}
+
+@media screen and (min-width: 900px) {
+
+    /* bovenste rij */
+    main>div>div:nth-of-type(10) {
+        transform: translateY(var(--size)) rotateY(90deg) translateZ(calc(var(--size)*-1))
+    }
+
+    main>div>div:nth-of-type(11) {
+        transform: translateY(var(--size)) rotateY(90deg) translateZ(calc(var(--size)*-1)) translateX(var(--size))
+    }
+
+    main>div>div:nth-of-type(12) {
+        transform: translateY(var(--size)) rotateY(90deg) translateZ(calc(var(--size)*-1)) translateX(calc(var(--size)*2))
+    }
+
+    main>div>div:nth-of-type(13) {
+        /* niks, eerste blok 2e rij staat goed */
+        transform: translateY(var(--size)) rotateY(90deg) translate(0, 0);
+    }
+
+    main>div>div:nth-of-type(14) {
+        transform: translateY(var(--size)) rotateY(90deg) translateX(var(--size));
+    }
+
+    main>div>div:nth-of-type(15) {
+        transform: translateY(var(--size)) rotateY(90deg) translateX(calc(var(--size)*2))
+    }
+
+    main>div>div:nth-of-type(16) {
+        transform: translateY(var(--size)) rotateY(90deg) translateZ(calc(var(--size)))
+    }
+
+    main>div>div:nth-of-type(17) {
+        transform: translateY(var(--size)) rotateY(90deg) translateZ(calc(var(--size))) translateX(var(--size))
+    }
+
+    main>div>div:nth-of-type(18) {
+        transform: translateY(var(--size)) rotateY(90deg) translateZ(calc(var(--size))) translateX(calc(var(--size)*2))
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    /* bovenste rij */
+    main>div>div:nth-of-type(19) {
+        transform: translateY(calc(var(--size)*2)) rotateY(90deg) translateZ(calc(var(--size)*-1))
+    }
+
+    main>div>div:nth-of-type(20) {
+        transform: translateY(calc(var(--size)*2)) rotateY(90deg) translateZ(calc(var(--size)*-1)) translateX(var(--size))
+    }
+
+    main>div>div:nth-of-type(21) {
+        transform: translateY(calc(var(--size)*2)) rotateY(90deg) translateZ(calc(var(--size)*-1)) translateX(calc(var(--size)*2))
+    }
+
+    main>div>div:nth-of-type(22) {
+        transform: translateY(calc(var(--size)*2)) rotateY(90deg) translate(0, 0);
+    }
+
+    main>div>div:nth-of-type(23) {
+        transform: translateY(calc(var(--size)*2)) rotateY(90deg) translateX(var(--size));
+    }
+
+    main>div>div:nth-of-type(24) {
+        transform: translateY(calc(var(--size)*2)) rotateY(90deg) translateX(calc(var(--size)*2))
+    }
+
+    main>div>div:nth-of-type(25) {
+        transform: translateY(calc(var(--size)*2)) rotateY(90deg) translateZ(calc(var(--size)))
+    }
+
+    main>div>div:nth-of-type(26) {
+        transform: translateY(calc(var(--size)*2)) rotateY(90deg) translateZ(calc(var(--size))) translateX(var(--size))
+    }
+
+    main>div>div:nth-of-type(27) {
+        transform: translateY(calc(var(--size)*2)) rotateY(90deg) translateZ(calc(var(--size))) translateX(calc(var(--size)*2))
     }
 }
