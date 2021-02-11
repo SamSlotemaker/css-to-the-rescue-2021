@@ -102,14 +102,18 @@ main>div {
     /* transform: rotateY(10deg) rotateX(-10deg); */
     width: calc(var(--size)*3);
     height: calc(var(--size)*3);
-
+    position: relative;
     /* background-color: red */
 }
 
 /* cubie */
 main>div>div {
     transform-style: preserve-3d;
-    position: relative;
+    width: var(--size);
+    height: var(--size);
+    display: inline-block;
+    position: absolute;
+    background-color: red;
 }
 
 /* cubie wall */
@@ -161,6 +165,10 @@ main>div>div>span:nth-of-type(6) {
 
 main>div>div {
     transition: transform .3s linear;
+}
+
+main>div>div {
+    transform-origin: 150px 150px 0;
 }
 
 /* bovenste rij */
@@ -300,7 +308,8 @@ main>div>div:nth-of-type(27) {
     }
 }
 
-@media screen and (min-width: 800px) {
+/*U' rotation */
+@media screen and (max-width: 800px) {
 
     /* bovenste rij */
     main>div>div:nth-of-type(1) {
@@ -342,7 +351,8 @@ main>div>div:nth-of-type(27) {
 
 }
 
-@media screen and (min-width: 900px) {
+/*E rotation */
+@media screen and (max-width: 900px) {
 
     /* bovenste rij */
     main>div>div:nth-of-type(10) {
@@ -383,7 +393,8 @@ main>div>div:nth-of-type(27) {
     }
 }
 
-@media screen and (min-width: 1000px) {
+/*B rotation*/
+@media screen and (max-width: 1000px) {
 
     /* bovenste rij */
     main>div>div:nth-of-type(19) {
@@ -420,5 +431,45 @@ main>div>div:nth-of-type(27) {
 
     main>div>div:nth-of-type(27) {
         transform: translateY(calc(var(--size)*2)) rotateY(90deg) translateZ(calc(var(--size))) translateX(calc(var(--size)*2))
+    }
+}
+
+/*L rotation */
+@media screen and (min-width: 1100px) {
+
+    main>div>div:nth-of-type(1) {
+        transform: rotateY(0deg) rotateX(90deg) translateZ(calc(var(--size)*-1))
+    }
+
+    main>div>div:nth-of-type(4) {
+        transform: translate(0, 0) rotateX(90deg);
+    }
+
+    main>div>div:nth-of-type(7) {
+        transform: rotateY(0deg) rotateX(90deg) translateZ(calc(var(--size)))
+    }
+
+    main>div>div:nth-of-type(10) {
+        transform: rotateX(90deg) translateY(var(--size)) translateZ(calc(var(--size)*-1))
+    }
+
+    main>div>div:nth-of-type(13) {
+        transform: rotateX(90deg) translateY(var(--size))
+    }
+
+    main>div>div:nth-of-type(16) {
+        transform: rotateX(90deg) translateZ(calc(var(--size))) translateY(var(--size))
+    }
+
+    main>div>div:nth-of-type(19) {
+        transform: rotateX(90deg) translateY(calc(var(--size)*2)) translateZ(calc(var(--size)*-1))
+    }
+
+    main>div>div:nth-of-type(22) {
+        transform: rotateX(90deg) translateY(calc(var(--size)*2))
+    }
+
+    main>div>div:nth-of-type(25) {
+        transform: rotateX(90deg) translateY(calc(var(--size)*2)) translateZ(calc(var(--size)))
     }
 }
