@@ -1,54 +1,41 @@
-input[type="checkbox"]:nth-of-type(3):valid~div>.one-1>span:nth-of-type(6) {
-    background: url('./images/eiffel.png');
+input[type="checkbox"]:nth-of-type(3):valid~div>div:nth-of-type(-n+9)>span:nth-of-type(6) {
+    background-image: url('./images/eiffel.png');
     background-size: calc(var(--size)*3);
+}
+
+input[type="checkbox"]:nth-of-type(3):valid~div>.one-1>span:nth-of-type(6) {
     background-position: 0px 0px;
 }
 
 input[type="checkbox"]:nth-of-type(3):valid~div>.one-2>span:nth-of-type(6) {
-    background: url('./images/eiffel.png');
-    background-size: calc(var(--size)*3);
     background-position: calc(var(--size)*-1) 0px;
 }
 
 input[type="checkbox"]:nth-of-type(3):valid~div>.one-3>span:nth-of-type(6) {
-    background: url('./images/eiffel.png');
-    background-size: calc(var(--size)*3);
     background-position: calc(var(--size)*2*-1) 0px;
 }
 
 input[type="checkbox"]:nth-of-type(3):valid~div>.one-4>span:nth-of-type(6) {
-    background: url('./images/eiffel.png');
-    background-size: calc(var(--size)*3);
     background-position: 0px calc(var(--size)*-1);
 }
 
 input[type="checkbox"]:nth-of-type(3):valid~div>.one-5>span:nth-of-type(6) {
-    background: url('./images/eiffel.png');
-    background-size: calc(var(--size)*3);
     background-position: calc(var(--size)*-1) calc(var(--size)*-1);
 }
 
 input[type="checkbox"]:nth-of-type(3):valid~div>.one-6>span:nth-of-type(6) {
-    background: url('./images/eiffel.png');
-    background-size: calc(var(--size)*3);
     background-position: calc(var(--size)*2*-1) calc(var(--size)*-1);
 }
 
 input[type="checkbox"]:nth-of-type(3):valid~div>.one-7>span:nth-of-type(6) {
-    background: url('./images/eiffel.png');
-    background-size: calc(var(--size)*3);
     background-position: 0px calc(var(--size)*2*-1);
 }
 
 input[type="checkbox"]:nth-of-type(3):valid~div>.one-8>span:nth-of-type(6) {
-    background: url('./images/eiffel.png');
-    background-size: calc(var(--size)*3);
     background-position: calc(var(--size)*-1) calc(var(--size)*2*-1);
 }
 
 input[type="checkbox"]:nth-of-type(3):valid~div>.one-9>span:nth-of-type(6) {
-    background: url('./images/eiffel.png');
-    background-size: calc(var(--size)*3);
     background-position: calc(var(--size)*2*-1) calc(var(--size)*2*-1);
 
 }

@@ -217,43 +217,73 @@ main>div>div>span {
 /* ************** */
 
 main>div>div>span {
+    background-color: black;
     transform: rotateX(var(--rotateWallX, 0deg)) rotateY(var(--rotateWallY, 0)) translateZ(var(--wall-offset, 0));
 }
 
 main>div>div>span:nth-of-type(1) {
-    background-color: var(--white);
     --rotateWallX: 90deg;
     --wall-offset: var(--offset)
 }
 
 main>div>div>span:nth-of-type(2) {
-    background-color: var(--orange);
     --rotateWallY: 90deg;
     --wall-offset: var(--offset)
 }
 
 main>div>div>span:nth-of-type(3) {
-    background-color: var(--green);
     --wall-offset: var(--negative-offset);
 }
 
 main>div>div>span:nth-of-type(4) {
-    background-color: var(--red);
     --rotateWallY: 90deg;
     --wall-offset: var(--negative-offset);
 }
 
 main>div>div>span:nth-of-type(5) {
-    background-color: var(--yellow);
     --rotateWallX: 90deg;
     --wall-offset: var(--negative-offset);
 }
 
 main>div>div>span:nth-of-type(6) {
-    background-color: var(--blue);
     --wall-offset: var(--offset);
-
 }
+
+/* vakjes kleuren met border radius */
+main>div>div>span::before {
+    content: "";
+    border-radius: calc(var(--size)/8);
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+}
+
+main>div>div>span:nth-of-type(1):before {
+    background-color: var(--white);
+}
+
+main>div>div>span:nth-of-type(2):before {
+    background-color: var(--orange);
+}
+
+main>div>div>span:nth-of-type(3):before {
+    background-color: var(--green);
+}
+
+main>div>div>span:nth-of-type(4):before {
+    background-color: var(--red);
+}
+
+main>div>div>span:nth-of-type(5):before {
+    background-color: var(--yellow);
+}
+
+main>div>div>span:nth-of-type(6):before {
+    background-color: var(--blue);
+}
+
+
 
 /* ********************** */
 /* **VERPLAATSEN CUBIESs* */
@@ -534,43 +564,6 @@ main>div>div {
 
 @media (min-width: 1500px) {
 
-    /* bovenste rij */
-    /* .one-1 {
-        transform: rotateX(0) rotateY(0) rotateZ(90deg) translateX(calc(var(--size)*-1)) translateY(calc(var(--size)*-1)) translateZ(var(--size));
-    }
-
-    .one-2 {
-        transform: rotateX(0) rotateY(0) rotateZ(90deg) translateX(0) translateY(calc(var(--size)*-1)) translateZ(var(--size));
-    }
-
-    .one-4 {
-        transform: rotateX(0) rotateY(0) rotateZ(90deg) translateX(calc(var(--size)*-1)) translateY(0) translateZ(var(--size));
-    }
-
-    .one-5 {
-        transform: rotateX(0) rotateY(0) rotateZ(90deg) translateX(0) translateY(0) translateZ(var(--size));
-    }
-
-
-    .one-7 {
-        transform: rotateX(0) rotateY(0) rotateZ(90deg) translateX(calc(var(--size)*-1)) translateY(var(--size)) translateZ(var(--size));
-    }
-
-    .one-8 {
-        transform: rotateX(0) rotateY(0) rotateZ(90deg) translateX(0) translateY(var(--size)) translateZ(var(--size));
-    }
-
-    .one-9 {
-        transform: rotateX(0) rotateY(90deg) rotateZ(90deg) translateX(var(--size)) translateY(var(--size)) translateZ(var(--size));
-    }
-
-    .two-9 {
-        transform: rotateX(0) rotateY(90deg) rotateZ(90deg) translateX(var(--size)) translateY(var(--size)) translateZ(0);
-    }
-
-    .three-9 {
-        transform: rotateX(0) rotateY(90deg) rotateZ(90deg) translateX(var(--size)) translateY(var(--size)) translateZ(calc(var(--size)*-1));
-    } */
     .one-1,
     .one-2,
     .one-4,
