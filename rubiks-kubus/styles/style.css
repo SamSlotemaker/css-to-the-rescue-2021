@@ -342,11 +342,11 @@ main>div>div:nth-of-type(27) {
     }
 
     main>div>div:nth-of-type(8) {
-        transform: rotateY(90deg)translateZ(calc(var(--size))) translateX(var(--size))
+        transform: rotateY(90deg) translateZ(calc(var(--size))) translateX(var(--size))
     }
 
     main>div>div:nth-of-type(9) {
-        transform: rotateY(90deg)translateZ(calc(var(--size))) translateX(calc(var(--size)*2))
+        transform: rotateY(90deg) translateZ(calc(var(--size))) translateX(calc(var(--size)*2))
     }
 
 }
