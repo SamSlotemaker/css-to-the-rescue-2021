@@ -3,6 +3,11 @@ input[type="checkbox"]:nth-of-type(3):valid~div>div:nth-of-type(-n+9)>span:nth-o
     background-size: calc(var(--size)*3);
 }
 
+/* remove color from :before elements to show images */
+input[type="checkbox"]:nth-of-type(3):valid~div>div:nth-of-type(-n+9)>span:nth-of-type(6):before {
+    background-color: transparent;
+}
+
 input[type="checkbox"]:nth-of-type(3):valid~div>.one-1>span:nth-of-type(6) {
     background-position: 0px 0px;
 }
