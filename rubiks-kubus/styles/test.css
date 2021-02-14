@@ -13,7 +13,6 @@
     --yellow: yellow;
 }
 
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -143,6 +142,11 @@ input[type="checkbox"]:nth-of-type(2):valid~div {
     --yellow: #ffff0088;
 }
 
+input[type="checkbox"]:nth-of-type(2):valid~div>div>span {
+    background-color: transparent;
+
+}
+
 input,
 label {
     display: inline-block;
@@ -163,8 +167,6 @@ label:nth-of-type(2) {
 label:nth-of-type(3) {
     top: calc(10% + 10em);
 }
-
-
 
 main>span {
     display: block;
@@ -210,16 +212,13 @@ main>div>div>span {
     border: black calc(var(--size)/30) solid;
     width: var(--size);
     height: var(--size);
+    background-color: black;
+    transform: rotateX(var(--rotateWallX, 0deg)) rotateY(var(--rotateWallY, 0)) translateZ(var(--wall-offset, 0));
 }
 
 /* ************** */
 /* **CUBIE WALLS* */
 /* ************** */
-
-main>div>div>span {
-    background-color: black;
-    transform: rotateX(var(--rotateWallX, 0deg)) rotateY(var(--rotateWallY, 0)) translateZ(var(--wall-offset, 0));
-}
 
 main>div>div>span:nth-of-type(1) {
     --rotateWallX: 90deg;
