@@ -174,36 +174,42 @@ main>span {
     left: 50%;
     transform: translate(-50%, -50%);
     height: 10px;
-    /* box-shadow: 23px 150px 128px 115px rgb(0 0 0 / 52%); */
     box-shadow: 0 100px 60px 8px rgb(0 0 0);
-    animation: boxShadow 10s linear infinite;
+    animation: boxShadow 6s linear infinite;
     transition: .3s ease-in-out;
 }
 
 @keyframes boxShadow {
     0% {
-        box-shadow: 0 100px 50px 8px rgb(0 0 0);
-    }
-
-    25% {
-        box-shadow: 0 110px 60px 8px rgb(0 0 0);
+        box-shadow: 0 100px 48px 8px rgb(0 0 0);
     }
 
     50% {
-        box-shadow: 0 100px 50px 8px rgb(0 0 0);
-    }
-
-    75% {
-        box-shadow: 0 110px 60px 8px rgb(0 0 0);
+        box-shadow: 0 100px 63px 12px rgba(0, 0, 0, 0.829);
     }
 
     100% {
-        box-shadow: 0 100px 50px 8px rgb(0 0 0);
+        box-shadow: 0 100px 48px 8px rgb(0 0 0);
     }
 }
 
 main>section {
-    perspective: 100em;
+    perspective: 200em;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-20px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
 }
 
 /* cube */
@@ -218,6 +224,8 @@ main>section>div {
     position: relative;
     transition: .3s ease-in-out;
 }
+
+
 
 /* cubie */
 main>section>div>div {
@@ -315,8 +323,12 @@ main>section>div>div {
     transition: transform .3s linear;
 }
 
+:root {
+    --explode: 1
+}
+
 main>section>div>div {
-    transform: rotateY(var(--rotateY, 0)) rotateX(var(--rotateX, 0)) rotateZ(var(--rotateZ, 0)) translateX(calc(var(--x)*var(--size))) translateY(calc(var(--y)*var(--size))) translateZ(calc(var(--z)*var(--size)))
+    transform: rotateY(var(--rotateY, 0)) rotateX(var(--rotateX, 0)) rotateZ(var(--rotateZ, 0)) translateX(calc(var(--x)*var(--size)*var(--explode))) translateY(calc(var(--y)*var(--size)*var(--explode))) translateZ(calc(var(--z)*var(--size)*var(--explode)))
         /* transform: rotateY(var(--rotateY, 0)) rotateX(var(--rotateX, 0)) rotateZ(var(--rotateZ, 0)) translateX(calc(var(--x)*var(--size))) translateY(calc(var(--y)*var(--size))) translateZ(calc(var(--z)*var(--size))) */
 }
 
@@ -611,177 +623,15 @@ main>section>div>div {
         transition: .3s;
     }
 
-    /* bovenste rij */
-    .one-1 {
-        --x: -1*10;
-        --y: -1*10;
-        --z: 1*10;
+    main>section>div>div {
+        --explode: 10;
     }
 
-    .one-2 {
-        --x: 0*10;
-        --y: -1*10;
-        --z: 1*10;
-    }
-
-    .one-3 {
-        --x: 1*10;
-        --y: -1*10;
-        --z: 1*10;
-    }
-
-    .one-4 {
-        --x: -1*10;
-        --y: 0*10;
-        --z: 1*10;
-    }
-
-    .one-5 {
-        --x: 0*10;
-        --y: 0*10;
-        --z: 1*10;
-        --rotateZ: 90deg;
-        --rotateY: 90deg;
-        --rotateX: 90deg;
-    }
-
-    .one-6 {
-        --x: 1*10;
-        --y: 0*10;
-        --z: 1*10;
-    }
-
-    .one-7 {
-        --x: -1*10;
-        --y: 1*10;
-        --z: 1*10;
-    }
-
-    .one-8 {
-        --x: 0*10;
-        --y: 1*10;
-        --z: 1*10;
-    }
-
-    .one-9 {
-        --x: 1*10;
-        --y: 1*10;
-        --z: 1*10;
-    }
-
-    /* middelste rij */
-    .two-1 {
-        --x: -1*10;
-        --y: -1*10;
-        --z: 0*10;
-    }
-
-    .two-2 {
-        --x: 0*10;
-        --y: -1*10;
-        --z: 0*10;
-    }
-
-    .two-3 {
-        --x: 1*10;
-        --y: -1*10;
-        --z: 0*10;
-    }
-
-    .two-4 {
-        --x: -1*10;
-        --y: 0*10;
-        --z: 0*10;
-    }
-
-    .two-5 {
-        --x: 0*10;
-        --y: 0*10;
-        --z: 0*10;
-        --rotateZ: 90deg;
-        --rotateY: 90deg;
-        --rotateX: 90deg;
-    }
-
-    .two-6 {
-        --x: 1*10;
-        --y: 0*10;
-        --z: 0*10;
-    }
-
-    .two-7 {
-        --x: -1*10;
-        --y: 1*10;
-        --z: 0*10;
-    }
-
-    .two-8 {
-        --x: 0*10;
-        --y: 1*10;
-        --z: 0*10;
-    }
-
-    .two-9 {
-        --x: 1*10;
-        --y: 1*10;
-        --z: 0;
-    }
-
-    /* onderste rij */
-    .three-1 {
-        --x: -1*10;
-        --y: -1*10;
-        --z: -1*10;
-    }
-
-    .three-2 {
-        --x: 0*10;
-        --y: -1*10;
-        --z: -1*10;
-    }
-
-    .three-3 {
-        --x: 1*10;
-        --y: -1*10;
-        --z: -1*10;
-    }
-
-    .three-4 {
-        --x: -1*10;
-        --y: 0*10;
-        --z: -1*10;
-    }
-
+    .one-5,
+    .two-5,
     .three-5 {
-        --x: 0*10;
-        --y: 0*10;
-        --z: -1*10;
         --rotateZ: 90deg;
         --rotateY: 90deg;
         --rotateX: 90deg;
-    }
-
-    .three-6 {
-        --x: 1*10;
-        --y: 0*10;
-        --z: -1*10;
-    }
-
-    .three-7 {
-        --x: -1*10;
-        --y: 1*10;
-        --z: -1*10;
-    }
-
-    .three-8 {
-        --x: 0*10;
-        --y: 1*10;
-        --z: -1*10;
-    }
-
-    .three-9 {
-        --x: 1*10;
-        --y: 1*10;
-        --z: -1*10;
     }
 }
