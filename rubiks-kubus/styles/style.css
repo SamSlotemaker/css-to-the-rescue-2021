@@ -28,6 +28,7 @@ body {
     background-color: rgb(64, 129, 131);
 }
 
+
 h1 {
     transform-style: preserve-3d;
     display: inline-block;
@@ -169,14 +170,37 @@ main>span {
     display: block;
     width: calc(var(--size)*3);
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 10px;
-    box-shadow: 23px 150px 128px 115px rgb(0 0 0 / 52%);
+    /* box-shadow: 23px 150px 128px 115px rgb(0 0 0 / 52%); */
+    box-shadow: 0 100px 60px 8px rgb(0 0 0);
+    animation: boxShadow 10s linear infinite;
+    transition: .3s ease-in-out;
 }
 
+@keyframes boxShadow {
+    0% {
+        box-shadow: 0 100px 50px 8px rgb(0 0 0);
+    }
 
+    25% {
+        box-shadow: 0 110px 60px 8px rgb(0 0 0);
+    }
+
+    50% {
+        box-shadow: 0 100px 50px 8px rgb(0 0 0);
+    }
+
+    75% {
+        box-shadow: 0 110px 60px 8px rgb(0 0 0);
+    }
+
+    100% {
+        box-shadow: 0 100px 50px 8px rgb(0 0 0);
+    }
+}
 
 
 /* cube */
@@ -189,7 +213,7 @@ main>div {
     width: calc(var(--size)*3);
     height: calc(var(--size)*3);
     position: relative;
-    /* background-color: red */
+    transition: .3s ease-in-out;
 }
 
 /* cubie */
@@ -199,7 +223,6 @@ main>div>div {
     height: var(--size);
     display: inline-block;
     position: absolute;
-    background-color: red;
 }
 
 /* cubie wall */
@@ -290,17 +313,8 @@ main>div>div {
 }
 
 main>div>div {
-    /* transform-origin: 150px 150px 0; */
-}
-
-main>div>div {
-    /* opacity: 0; */
-}
-
-
-
-main>div>div {
-    transform: rotateX(var(--rotateX, 0)) rotateY(var(--rotateY, 0)) rotateZ(var(--rotateZ, 0)) translateX(calc(var(--x)*var(--size))) translateY(calc(var(--y)*var(--size))) translateZ(calc(var(--z)*var(--size)))
+    transform: rotateY(var(--rotateY, 0)) rotateX(var(--rotateX, 0)) rotateZ(var(--rotateZ, 0)) translateX(calc(var(--x)*var(--size))) translateY(calc(var(--y)*var(--size))) translateZ(calc(var(--z)*var(--size)))
+        /* transform: rotateY(var(--rotateY, 0)) rotateX(var(--rotateX, 0)) rotateZ(var(--rotateZ, 0)) translateX(calc(var(--x)*var(--size))) translateY(calc(var(--y)*var(--size))) translateZ(calc(var(--z)*var(--size))) */
 }
 
 /* bovenste rij */
@@ -577,5 +591,186 @@ main>div>div {
     .two-9,
     .three-9 {
         --rotateY: 90deg
+    }
+}
+
+
+/*Explode */
+@media(max-width: 700px) {
+    main>span {
+        opacity: 0;
+        transition: .3s;
+    }
+
+    main>div {
+        animation: none;
+        opacity: 0;
+        transition: .3s;
+    }
+
+    /* bovenste rij */
+    .one-1 {
+        --x: -1*10;
+        --y: -1*10;
+        --z: 1*10;
+    }
+
+    .one-2 {
+        --x: 0*10;
+        --y: -1*10;
+        --z: 1*10;
+    }
+
+    .one-3 {
+        --x: 1*10;
+        --y: -1*10;
+        --z: 1*10;
+    }
+
+    .one-4 {
+        --x: -1*10;
+        --y: 0*10;
+        --z: 1*10;
+    }
+
+    .one-5 {
+        --x: 0*10;
+        --y: 0*10;
+        --z: 1*10;
+    }
+
+    .one-6 {
+        --x: 1*10;
+        --y: 0*10;
+        --z: 1*10;
+    }
+
+    .one-7 {
+        --x: -1*10;
+        --y: 1*10;
+        --z: 1*10;
+    }
+
+    .one-8 {
+        --x: 0*10;
+        --y: 1*10;
+        --z: 1*10;
+    }
+
+    .one-9 {
+        --x: 1*10;
+        --y: 1*10;
+        --z: 1*10;
+    }
+
+    /* middelste rij */
+    .two-1 {
+        --x: -1*10;
+        --y: -1*10;
+        --z: 0*10;
+    }
+
+    .two-2 {
+        --x: 0*10;
+        --y: -1*10;
+        --z: 0*10;
+    }
+
+    .two-3 {
+        --x: 1*10;
+        --y: -1*10;
+        --z: 0*10;
+    }
+
+    .two-4 {
+        --x: -1*10;
+        --y: 0*10;
+        --z: 0*10;
+    }
+
+    .two-5 {
+        --x: 0*10;
+        --y: 0*10;
+        --z: 0*10;
+
+    }
+
+    .two-6 {
+        --x: 1*10;
+        --y: 0*10;
+        --z: 0*10;
+    }
+
+    .two-7 {
+        --x: -1*10;
+        --y: 1*10;
+        --z: 0*10;
+    }
+
+    .two-8 {
+        --x: 0*10;
+        --y: 1*10;
+        --z: 0*10;
+    }
+
+    .two-9 {
+        --x: 1*10;
+        --y: 1*10;
+        --z: 0;
+    }
+
+    /* onderste rij */
+    .three-1 {
+        --x: -1*10;
+        --y: -1*10;
+        --z: -1*10;
+    }
+
+    .three-2 {
+        --x: 0*10;
+        --y: -1*10;
+        --z: -1*10;
+    }
+
+    .three-3 {
+        --x: 1*10;
+        --y: -1*10;
+        --z: -1*10;
+    }
+
+    .three-4 {
+        --x: -1*10;
+        --y: 0*10;
+        --z: -1*10;
+    }
+
+    .three-5 {
+        --x: 0*10;
+        --y: 0*10;
+        --z: -1*10;
+    }
+
+    .three-6 {
+        --x: 1*10;
+        --y: 0*10;
+        --z: -1*10;
+    }
+
+    .three-7 {
+        --x: -1*10;
+        --y: 1*10;
+        --z: -1*10;
+    }
+
+    .three-8 {
+        --x: 0*10;
+        --y: 1*10;
+        --z: -1*10;
+    }
+
+    .three-9 {
+        --x: 1*10;
+        --y: 1*10;
+        --z: -1*10;
     }
 }
