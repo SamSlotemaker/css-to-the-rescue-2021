@@ -4,43 +4,43 @@ input[type="checkbox"]:nth-of-type(3):valid~div>div:nth-of-type(-n+9)>span:nth-o
 }
 
 /* remove color from :before elements to show images */
-input[type="checkbox"]:nth-of-type(3):valid~div>div:nth-of-type(-n+9)>span:nth-of-type(6):before {
+input[type="checkbox"]:nth-of-type(3):valid~section>div>div:nth-of-type(-n+9)>span:nth-of-type(6):before {
     background-color: transparent;
 }
 
-input[type="checkbox"]:nth-of-type(3):valid~div>.one-1>span:nth-of-type(6) {
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-1>span:nth-of-type(6) {
     background-position: 0px 0px;
 }
 
-input[type="checkbox"]:nth-of-type(3):valid~div>.one-2>span:nth-of-type(6) {
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-2>span:nth-of-type(6) {
     background-position: calc(var(--size)*-1) 0px;
 }
 
-input[type="checkbox"]:nth-of-type(3):valid~div>.one-3>span:nth-of-type(6) {
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-3>span:nth-of-type(6) {
     background-position: calc(var(--size)*2*-1) 0px;
 }
 
-input[type="checkbox"]:nth-of-type(3):valid~div>.one-4>span:nth-of-type(6) {
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-4>span:nth-of-type(6) {
     background-position: 0px calc(var(--size)*-1);
 }
 
-input[type="checkbox"]:nth-of-type(3):valid~div>.one-5>span:nth-of-type(6) {
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-5>span:nth-of-type(6) {
     background-position: calc(var(--size)*-1) calc(var(--size)*-1);
 }
 
-input[type="checkbox"]:nth-of-type(3):valid~div>.one-6>span:nth-of-type(6) {
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-6>span:nth-of-type(6) {
     background-position: calc(var(--size)*2*-1) calc(var(--size)*-1);
 }
 
-input[type="checkbox"]:nth-of-type(3):valid~div>.one-7>span:nth-of-type(6) {
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-7>span:nth-of-type(6) {
     background-position: 0px calc(var(--size)*2*-1);
 }
 
-input[type="checkbox"]:nth-of-type(3):valid~div>.one-8>span:nth-of-type(6) {
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-8>span:nth-of-type(6) {
     background-position: calc(var(--size)*-1) calc(var(--size)*2*-1);
 }
 
-input[type="checkbox"]:nth-of-type(3):valid~div>.one-9>span:nth-of-type(6) {
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-9>span:nth-of-type(6) {
     background-position: calc(var(--size)*2*-1) calc(var(--size)*2*-1);
 
 }

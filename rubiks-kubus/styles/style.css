@@ -126,12 +126,12 @@ input[type="checkbox"]:checked+label {
     box-shadow: inset 0 0 10px #408183;
 }
 
-input[type="checkbox"]:nth-of-type(1):valid~div {
+input[type="checkbox"]:nth-of-type(1):valid~section>div {
     transform: rotateY(0) rotateX(0);
     animation: testRotate2 3s linear infinite;
 }
 
-input[type="checkbox"]:nth-of-type(2):valid~div {
+input[type="checkbox"]:nth-of-type(2):valid~section>div {
     --red: #ff000088;
     --blue: #0000ff88;
     --white: #ffffff88;
@@ -140,7 +140,7 @@ input[type="checkbox"]:nth-of-type(2):valid~div {
     --yellow: #ffff0088;
 }
 
-input[type="checkbox"]:nth-of-type(2):valid~div>div>span {
+input[type="checkbox"]:nth-of-type(2):valid~section>div>div>span {
     background-color: transparent;
 
 }
@@ -202,9 +202,12 @@ main>span {
     }
 }
 
+main>section {
+    perspective: 100em;
+}
 
 /* cube */
-main>div {
+main>section>div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -217,7 +220,7 @@ main>div {
 }
 
 /* cubie */
-main>div>div {
+main>section>div>div {
     transform-style: preserve-3d;
     width: var(--size);
     height: var(--size);
@@ -226,7 +229,7 @@ main>div>div {
 }
 
 /* cubie wall */
-main>div>div>span {
+main>section>div>div>span {
     position: absolute;
     display: inline-block;
     border: black calc(var(--size)/30) solid;
@@ -240,36 +243,36 @@ main>div>div>span {
 /* **CUBIE WALLS* */
 /* ************** */
 
-main>div>div>span:nth-of-type(1) {
+main>section>div>div>span:nth-of-type(1) {
     --rotateWallX: 90deg;
     --wall-offset: var(--offset)
 }
 
-main>div>div>span:nth-of-type(2) {
+main>section>div>div>span:nth-of-type(2) {
     --rotateWallY: 90deg;
     --wall-offset: var(--offset)
 }
 
-main>div>div>span:nth-of-type(3) {
+main>section>div>div>span:nth-of-type(3) {
     --wall-offset: var(--negative-offset);
 }
 
-main>div>div>span:nth-of-type(4) {
+main>section>div>div>span:nth-of-type(4) {
     --rotateWallY: 90deg;
     --wall-offset: var(--negative-offset);
 }
 
-main>div>div>span:nth-of-type(5) {
+main>section>div>div>span:nth-of-type(5) {
     --rotateWallX: 90deg;
     --wall-offset: var(--negative-offset);
 }
 
-main>div>div>span:nth-of-type(6) {
+main>section>div>div>span:nth-of-type(6) {
     --wall-offset: var(--offset);
 }
 
 /* vakjes kleuren met border radius */
-main>div>div>span::before {
+main>section>div>div>span::before {
     content: "";
     border-radius: calc(var(--size)/8);
     width: 100%;
@@ -278,27 +281,27 @@ main>div>div>span::before {
     position: absolute;
 }
 
-main>div>div>span:nth-of-type(1):before {
+main>section>div>div>span:nth-of-type(1):before {
     background-color: var(--white);
 }
 
-main>div>div>span:nth-of-type(2):before {
+main>section>div>div>span:nth-of-type(2):before {
     background-color: var(--orange);
 }
 
-main>div>div>span:nth-of-type(3):before {
+main>section>div>div>span:nth-of-type(3):before {
     background-color: var(--green);
 }
 
-main>div>div>span:nth-of-type(4):before {
+main>section>div>div>span:nth-of-type(4):before {
     background-color: var(--red);
 }
 
-main>div>div>span:nth-of-type(5):before {
+main>section>div>div>span:nth-of-type(5):before {
     background-color: var(--yellow);
 }
 
-main>div>div>span:nth-of-type(6):before {
+main>section>div>div>span:nth-of-type(6):before {
     background-color: var(--blue);
 }
 
@@ -308,11 +311,11 @@ main>div>div>span:nth-of-type(6):before {
 /* **VERPLAATSEN CUBIESs* */
 /* ********************** */
 
-main>div>div {
+main>section>div>div {
     transition: transform .3s linear;
 }
 
-main>div>div {
+main>section>div>div {
     transform: rotateY(var(--rotateY, 0)) rotateX(var(--rotateX, 0)) rotateZ(var(--rotateZ, 0)) translateX(calc(var(--x)*var(--size))) translateY(calc(var(--y)*var(--size))) translateZ(calc(var(--z)*var(--size)))
         /* transform: rotateY(var(--rotateY, 0)) rotateX(var(--rotateX, 0)) rotateZ(var(--rotateZ, 0)) translateX(calc(var(--x)*var(--size))) translateY(calc(var(--y)*var(--size))) translateZ(calc(var(--z)*var(--size))) */
 }
@@ -602,7 +605,7 @@ main>div>div {
         transition: .3s;
     }
 
-    main>div {
+    main>section>div {
         animation: none;
         opacity: 0;
         transition: .3s;
@@ -637,6 +640,9 @@ main>div>div {
         --x: 0*10;
         --y: 0*10;
         --z: 1*10;
+        --rotateZ: 90deg;
+        --rotateY: 90deg;
+        --rotateX: 90deg;
     }
 
     .one-6 {
@@ -692,7 +698,9 @@ main>div>div {
         --x: 0*10;
         --y: 0*10;
         --z: 0*10;
-
+        --rotateZ: 90deg;
+        --rotateY: 90deg;
+        --rotateX: 90deg;
     }
 
     .two-6 {
@@ -748,6 +756,9 @@ main>div>div {
         --x: 0*10;
         --y: 0*10;
         --z: -1*10;
+        --rotateZ: 90deg;
+        --rotateY: 90deg;
+        --rotateX: 90deg;
     }
 
     .three-6 {
