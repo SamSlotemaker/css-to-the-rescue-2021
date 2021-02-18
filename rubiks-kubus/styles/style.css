@@ -208,6 +208,7 @@ p {
     background-color: #fff;
     padding: 2.5em;
     max-width: 400px;
+    text-align: center;
     border-radius: 3em;
     font-size: 1.6em;
     font-weight: bold;
@@ -432,7 +433,8 @@ main>section>div>div>span:nth-of-type(6):before {
 /* ********************** */
 
 main>section>div>div {
-    transition: transform .3s linear;
+    transition: transform .6s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    ;
 }
 
 :root {
@@ -753,10 +755,15 @@ main>section>div>div {
         transition: .3s;
     }
 
+    body {
+        overflow: hidden;
+    }
+
     main>section>div {
         animation: none;
         opacity: 0;
         transition: .3s;
+
     }
 
     main>section>div>div {

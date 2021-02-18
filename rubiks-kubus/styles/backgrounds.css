@@ -47,10 +47,12 @@ input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-9>span:nth-of-type(
 /* GRADIENT */
 input[type="checkbox"]:nth-of-type(4):valid~section>div>div:nth-of-type(n+16)>span:nth-of-type(3) {
     --aantalPunten: 30;
+    --kleur1: green;
+    --kleur2: rgb(1, 51, 1);
     --hoek: calc(360deg/var(--aantalPunten));
     background-image: repeating-conic-gradient(from 0deg at 50% 50%,
-            red calc(var(--hoek)*1) calc(var(--hoek)*2),
-            blue calc(var(--hoek)*2) calc(var(--hoek)*3));
+            var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
+            var(--kleur2) calc(var(--hoek)*2) calc(var(--hoek)*3));
     background-size: calc(var(--size)*3) calc(var(--size)*3);
     animation: rotatingGradient 8s linear infinite;
 }
@@ -101,80 +103,80 @@ input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-9>span:nth-of-typ
 @keyframes rotatingGradient {
     0% {
         background-image: repeating-conic-gradient(from calc(var(--hoek)*0) at 50% 50%,
-                red calc(var(--hoek)*1) calc(var(--hoek)*2),
-                blue calc(var(--hoek)*2) calc(var(--hoek)*3));
+                var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
+                var(--kleur2) calc(var(--hoek)*2) calc(var(--hoek)*3));
     }
 
     8% {
         background-image: repeating-conic-gradient(from calc(var(--hoek)*1) at 50% 50%,
-                red calc(var(--hoek)*1) calc(var(--hoek)*2),
-                blue calc(var(--hoek)*2) calc(var(--hoek)*3));
+                var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
+                var(--kleur2) calc(var(--hoek)*2) calc(var(--hoek)*3));
     }
 
     16% {
         background-image: repeating-conic-gradient(from calc(var(--hoek)*2) at 50% 50%,
-                red calc(var(--hoek)*1) calc(var(--hoek)*2),
-                blue calc(var(--hoek)*2) calc(var(--hoek)*3));
+                var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
+                var(--kleur2) calc(var(--hoek)*2) calc(var(--hoek)*3));
     }
 
     25% {
         background-image: repeating-conic-gradient(from calc(var(--hoek)*3) at 50% 50%,
-                red calc(var(--hoek)*1) calc(var(--hoek)*2),
-                blue calc(var(--hoek)*2) calc(var(--hoek)*3));
+                var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
+                var(--kleur2) calc(var(--hoek)*2) calc(var(--hoek)*3));
     }
 
     33% {
         background-image: repeating-conic-gradient(from calc(var(--hoek)*4) at 50% 50%,
-                red calc(var(--hoek)*1) calc(var(--hoek)*2),
-                blue calc(var(--hoek)*2) calc(var(--hoek)*3));
+                var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
+                var(--kleur2) calc(var(--hoek)*2) calc(var(--hoek)*3));
     }
 
     41% {
         background-image: repeating-conic-gradient(from calc(var(--hoek)*5) at 50% 50%,
-                red calc(var(--hoek)*1) calc(var(--hoek)*2),
-                blue calc(var(--hoek)*2) calc(var(--hoek)*3));
+                var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
+                var(--kleur2) calc(var(--hoek)*2) calc(var(--hoek)*3));
     }
 
     50% {
         background-image: repeating-conic-gradient(from calc(var(--hoek)*6) at 50% 50%,
-                red calc(var(--hoek)*1) calc(var(--hoek)*2),
-                blue calc(var(--hoek)*2) calc(var(--hoek)*3));
+                var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
+                var(--kleur2)calc(var(--hoek)*2) calc(var(--hoek)*3));
     }
 
     58% {
         background-image: repeating-conic-gradient(from calc(var(--hoek)*7) at 50% 50%,
-                red calc(var(--hoek)*1) calc(var(--hoek)*2),
-                blue calc(var(--hoek)*2) calc(var(--hoek)*3));
+                var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
+                var(--kleur2) calc(var(--hoek)*2) calc(var(--hoek)*3));
     }
 
     66% {
         background-image: repeating-conic-gradient(from calc(var(--hoek)*8) at 50% 50%,
-                red calc(var(--hoek)*1) calc(var(--hoek)*2),
-                blue calc(var(--hoek)*2) calc(var(--hoek)*3));
+                var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
+                var(--kleur2) calc(var(--hoek)*2) calc(var(--hoek)*3));
     }
 
     75% {
         background-image: repeating-conic-gradient(from calc(var(--hoek)*9) at 50% 50%,
-                red calc(var(--hoek)*1) calc(var(--hoek)*2),
-                blue calc(var(--hoek)*2) calc(var(--hoek)*3));
+                var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
+                var(--kleur2) calc(var(--hoek)*2) calc(var(--hoek)*3));
     }
 
     83% {
         background-image: repeating-conic-gradient(from calc(var(--hoek)*10) at 50% 50%,
-                red calc(var(--hoek)*1) calc(var(--hoek)*2),
-                blue calc(var(--hoek)*2) calc(var(--hoek)*3));
+                var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
+                var(--kleur2)calc(var(--hoek)*2) calc(var(--hoek)*3));
     }
 
     91% {
         background-image: repeating-conic-gradient(from calc(var(--hoek)*11) at 50% 50%,
-                red calc(var(--hoek)*1) calc(var(--hoek)*2),
-                blue calc(var(--hoek)*2) calc(var(--hoek)*3));
+                var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
+                var(--kleur2) calc(var(--hoek)*2) calc(var(--hoek)*3));
     }
 
     100% {
         background-image: repeating-conic-gradient(from calc(var(--hoek)*12) at 50% 50%,
-                red calc(var(--hoek)*1) calc(var(--hoek)*2),
-                blue calc(var(--hoek)*2) calc(var(--hoek)*3));
+                var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
+                var(--kleur2) calc(var(--hoek)*2) calc(var(--hoek)*3));
     }
 }
 
