@@ -50,11 +50,28 @@ input[type="checkbox"]:nth-of-type(4):valid~section>div>div:nth-of-type(n+16)>sp
     --kleur1: green;
     --kleur2: rgb(1, 51, 1);
     --hoek: calc(360deg/var(--aantalPunten));
-    background-image: repeating-conic-gradient(from 0deg at 50% 50%,
+    background-image: repeating-conic-gradient(from var(--rotateDeg) at 50% 50%,
             var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
             var(--kleur2) calc(var(--hoek)*2) calc(var(--hoek)*3));
     background-size: calc(var(--size)*3) calc(var(--size)*3);
-    animation: rotatingGradient 8s linear infinite;
+    animation: rotatingGradient 8s linear normal infinite;
+}
+
+/* Draaien met houdini @property */
+@property --rotateDeg {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0turn;
+}
+
+@keyframes rotatingGradient {
+    0% {
+        --rotateDeg: 0turn;
+    }
+
+    100% {
+        --rotateDeg: -1turn;
+    }
 }
 
 
@@ -100,6 +117,7 @@ input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-9>span:nth-of-typ
 }
 
 
+/* 
 @keyframes rotatingGradient {
     0% {
         background-image: repeating-conic-gradient(from calc(var(--hoek)*0) at 50% 50%,
@@ -178,7 +196,7 @@ input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-9>span:nth-of-typ
                 var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
                 var(--kleur2) calc(var(--hoek)*2) calc(var(--hoek)*3));
     }
-}
+} */
 
 @media (prefers-reduced-motion) {
     input[type="checkbox"]:nth-of-type(4):valid~section>div>div:nth-of-type(n+16)>span:nth-of-type(3) {

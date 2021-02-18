@@ -331,7 +331,7 @@ main>section>div {
     justify-content: center;
     align-items: center;
     transform-style: preserve-3d;
-    transform: rotateY(180deg) rotateX(0deg);
+    transform: rotateY(190deg) rotateX(10deg);
     width: calc(var(--size)*3);
     height: calc(var(--size)*3);
     position: relative;
