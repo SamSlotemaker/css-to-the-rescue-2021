@@ -166,6 +166,11 @@ label:nth-of-type(3) {
     top: calc(10% + 10em);
 }
 
+label:nth-of-type(3) {
+    top: calc(10% + 15em);
+}
+
+
 main>span {
     display: block;
     width: calc(var(--size)*3);
