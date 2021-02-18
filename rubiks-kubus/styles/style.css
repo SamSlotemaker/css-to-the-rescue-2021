@@ -193,6 +193,114 @@ main>span {
     }
 }
 
+/* text message */
+p {
+    z-index: 10;
+    position: absolute;
+    color: rgb(32, 77, 78);
+    bottom: 10%;
+    left: 55%;
+    background-color: #fff;
+    padding: 2.5em;
+    max-width: 400px;
+    border-radius: 3em;
+    font-size: 1.6em;
+    font-weight: bold;
+    animation: disappear 1s ease-out forwards;
+    animation-delay: 3s;
+}
+
+p::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-left: white 30px solid;
+    border-top: transparent 30px solid;
+    border-bottom: transparent 30px solid;
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* BOOM */
+main>div {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: .4s ease-in;
+
+}
+
+
+strong {
+    font-size: 2em;
+    position: relative;
+    z-index: -1;
+    text-transform: uppercase;
+    opacity: 0;
+    color: rgb(64, 129, 131);
+}
+
+strong::after {
+    content: "";
+    display: inline-flex;
+    background-color: orange;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    z-index: -2;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+    transition: .3s ease-in-out;
+}
+
+strong::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -3;
+    background-color: rgb(255, 136, 0);
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%) rotate(12deg);
+    transition: .6s ease-in-out;
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+}
+
+strong span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -4;
+    background-color: rgb(255, 81, 0);
+    display: inline-block;
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%) rotate(32deg);
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+    transition: .6s ease-in-out;
+}
+
+/* cube */
 main>section {
     perspective: 200em;
     animation: float 6s ease-in-out infinite;
@@ -212,13 +320,12 @@ main>section {
     }
 }
 
-/* cube */
 main>section>div {
     display: flex;
     justify-content: center;
     align-items: center;
     transform-style: preserve-3d;
-    transform: rotateY(10deg) rotateX(-10deg);
+    transform: rotateY(180deg) rotateX(0deg);
     width: calc(var(--size)*3);
     height: calc(var(--size)*3);
     position: relative;
@@ -316,7 +423,7 @@ main>section>div>div>span:nth-of-type(6):before {
 
 
 /* ********************** */
-/* **VERPLAATSEN CUBIESs* */
+/* **VERPLAATSEN CUBIES* */
 /* ********************** */
 
 main>section>div>div {
@@ -612,6 +719,30 @@ main>section>div>div {
 
 /*Explode */
 @media(max-width: 700px) {
+    main>div {
+        opacity: 1;
+    }
+
+    main>div>strong {
+        opacity: 1;
+    }
+
+    strong::after {
+        transition: .3s ease-in-out;
+        clip-path: polygon(63% 4%, 66% 37%, 99% 39%, 80% 63%, 83% 87%, 49% 79%, 10% 86%, 32% 57%, 2% 35%, 35% 27%);
+    }
+
+    strong::before {
+        transition: .6s ease-in-out;
+        clip-path: polygon(63% 4%, 66% 37%, 99% 39%, 80% 63%, 83% 87%, 49% 79%, 10% 86%, 32% 57%, 2% 35%, 35% 27%);
+    }
+
+    strong span {
+        transition: .6s ease-in-out;
+        clip-path: polygon(59% 10%, 66% 37%, 99% 39%, 80% 63%, 90% 95%, 49% 67%, 8% 90%, 31% 57%, 3% 21%, 35% 27%)
+    }
+
+
     main>span {
         opacity: 0;
         transition: .3s;
