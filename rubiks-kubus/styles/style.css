@@ -694,6 +694,28 @@ main>section>div>div {
     border-radius: 50%;
 }
 
+.human .arm {
+    display: inline-block;
+    position: absolute;
+    width: 250px;
+    height: 100px;
+    border: solid 5px #000;
+    border-color: #000 transparent transparent transparent;
+    border-radius: 50%/50px 50px 0 0;
+
+}
+
+.human .arm-1 {
+    transform-origin: top right;
+    transform: translateY(50%) rotate(-45deg);
+    left: -200px;
+}
+
+.human .arm-2 {
+    transform-origin: top left;
+    transform: translateY(50%) rotate(45deg);
+    right: -200px;
+}
 
 /* F rotation */
 @media (max-width: 1300px) {
