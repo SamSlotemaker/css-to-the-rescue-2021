@@ -29,6 +29,7 @@ body {
 }
 
 
+/* HEADING (SMALL CUBIE) */
 h1 {
     transform-style: preserve-3d;
     display: inline-block;
@@ -36,7 +37,7 @@ h1 {
     top: 4em;
     left: 2em;
     cursor: pointer;
-    animation: testRotate2 3s linear infinite;
+    animation: rotating 3s linear infinite;
     animation-play-state: paused;
 }
 
@@ -104,7 +105,7 @@ h2 {
     color: rgb(32, 77, 78);
 }
 
-/* FORM */
+/* CHECKBOXES (BUTTONS) */
 
 label {
     color: #408183;
@@ -128,8 +129,19 @@ input[type="checkbox"]:checked+label {
 
 input[type="checkbox"]:nth-of-type(1):valid~section>div {
     transform: rotateY(0) rotateX(0);
-    animation: testRotate2 3s linear infinite;
+    animation: rotating 3s linear infinite;
 }
+
+@keyframes rotating {
+    from {
+        transform: rotate3d(0);
+    }
+
+    to {
+        transform: rotate3d(1, 1, 1, 360deg);
+    }
+}
+
 
 input[type="checkbox"]:nth-of-type(2):valid~section>div {
     --red: #ff000088;
@@ -145,6 +157,7 @@ input[type="checkbox"]:nth-of-type(2):valid~section>div>div>span {
 
 }
 
+/* POSITION LABELS */
 input,
 label {
     display: inline-block;
@@ -170,7 +183,7 @@ label:nth-of-type(4) {
     top: calc(10% + 15em);
 }
 
-
+/* SHADOW UNDER CUBE */
 main>span {
     display: block;
     width: calc(var(--size)*3);
@@ -198,7 +211,8 @@ main>span {
     }
 }
 
-/* text message */
+
+/* initial text message */
 p {
     z-index: 10;
     position: absolute;
@@ -238,7 +252,7 @@ p::before {
     }
 }
 
-/* BOOM */
+/* BOOM ANIMATION */
 main>div {
     position: absolute;
     display: inline-block;
@@ -247,9 +261,7 @@ main>div {
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: .4s ease-in;
-
 }
-
 
 strong {
     font-size: 2em;
@@ -260,53 +272,46 @@ strong {
     color: rgb(64, 129, 131);
 }
 
-strong::after {
-    content: "";
-    display: inline-flex;
-    background-color: orange;
+strong::before,
+strong::after,
+strong span {
+    display: inline-block;
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    justify-content: center;
-    align-items: center;
-    z-index: -2;
     width: 400px;
     height: 400px;
-    position: absolute;
     clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+}
+
+strong::after {
+    content: "";
+    background-color: orange;
+    transform: translate(-50%, -50%);
+    z-index: -2;
     transition: .3s ease-in-out;
 }
 
 strong::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    content: "";
     z-index: -3;
     background-color: rgb(255, 136, 0);
-    display: inline-block;
-    width: 400px;
-    height: 400px;
     transform: translate(-50%, -50%) rotate(12deg);
     transition: .6s ease-in-out;
-    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
 }
 
 strong span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     z-index: -4;
     background-color: rgb(255, 81, 0);
-    display: inline-block;
-    width: 400px;
-    height: 400px;
     transform: translate(-50%, -50%) rotate(32deg);
-    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
     transition: .6s ease-in-out;
 }
 
-/* cube */
+/* ***************************** */
+/* ************cube************* */
+/* ***************************** */
+
+/* container */
 main>section {
     perspective: 200em;
     animation: float 6s ease-in-out infinite;
@@ -326,19 +331,18 @@ main>section {
     }
 }
 
+/* cube (cubie container) */
 main>section>div {
     display: flex;
     justify-content: center;
     align-items: center;
     transform-style: preserve-3d;
-    transform: rotateY(190deg) rotateX(10deg);
+    transform: rotateY(10deg) rotateX(-10deg);
     width: calc(var(--size)*3);
     height: calc(var(--size)*3);
     position: relative;
     transition: .3s ease-in-out;
 }
-
-
 
 /* cubie */
 main>section>div>div {
@@ -349,7 +353,11 @@ main>section>div>div {
     position: absolute;
 }
 
-/* cubie wall */
+/* ************** */
+/* **CUBIE WALLS* */
+/* ************** */
+
+/* cubie wall general */
 main>section>div>div>span {
     position: absolute;
     display: inline-block;
@@ -360,10 +368,7 @@ main>section>div>div>span {
     transform: rotateX(var(--rotateWallX, 0deg)) rotateY(var(--rotateWallY, 0)) translateZ(var(--wall-offset, 0));
 }
 
-/* ************** */
-/* **CUBIE WALLS* */
-/* ************** */
-
+/* cubie wall positioning */
 main>section>div>div>span:nth-of-type(1) {
     --rotateWallX: 90deg;
     --wall-offset: var(--offset)
@@ -392,7 +397,7 @@ main>section>div>div>span:nth-of-type(6) {
     --wall-offset: var(--offset);
 }
 
-/* vakjes kleuren met border radius */
+/* set color to before so i can incorporate border radius */
 main>section>div>div>span::before {
     content: "";
     border-radius: calc(var(--size)/8);
@@ -426,8 +431,6 @@ main>section>div>div>span:nth-of-type(6):before {
     background-color: var(--blue);
 }
 
-
-
 /* ********************** */
 /* **VERPLAATSEN CUBIES* */
 /* ********************** */
@@ -443,7 +446,6 @@ main>section>div>div {
 
 main>section>div>div {
     transform: rotateY(var(--rotateY, 0)) rotateX(var(--rotateX, 0)) rotateZ(var(--rotateZ, 0)) translateX(calc(var(--x)*var(--size)*var(--explode))) translateY(calc(var(--y)*var(--size)*var(--explode))) translateZ(calc(var(--z)*var(--size)*var(--explode)))
-        /* transform: rotateY(var(--rotateY, 0)) rotateX(var(--rotateX, 0)) rotateZ(var(--rotateZ, 0)) translateX(calc(var(--x)*var(--size))) translateY(calc(var(--y)*var(--size))) translateZ(calc(var(--z)*var(--size))) */
 }
 
 /* bovenste rij */
@@ -612,31 +614,88 @@ main>section>div>div {
     --z: -1;
 }
 
-@keyframes testRotate {
-    0% {
-        transform: rotateX(0deg)
-    }
 
-    50% {
-        transform: rotateX(180deg)
-    }
-
-    100% {
-        transform: rotateX(360deg)
-    }
+/* HUMAN */
+.human {
+    position: relative;
+    display: block;
+    width: calc(var(--size)*3);
+    height: calc(var(--size)*3);
 }
 
-@keyframes testRotate2 {
-    from {
-        transform: rotate3d(0);
-    }
+.human .eye {
+    display: inline-block;
+    position: absolute;
+    transform: translateZ(calc((var(--size)*1.53)));
+    z-index: 10;
+    top: 20%;
+    width: calc(var(--size)/2);
+    height: calc(var(--size)/2);
+    background-color: white;
+    border-radius: 50%;
+}
 
-    to {
-        transform: rotate3d(1, 1, 1, 360deg);
-    }
+.human .eye::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: calc(var(--size)/5);
+    height: calc(var(--size)/5);
+    background-color: black;
+    border-radius: 50%;
+}
+
+.human .eye:nth-of-type(1) {
+    left: 20%;
+}
+
+.human .eye:nth-of-type(2) {
+    right: 20%;
+}
+
+.human .mouth {
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    width: calc(var(--size)*1.5);
+    height: calc(var(--size)/1.1);
+    border-radius: 48% 52% 52% 48% / 25% 25% 75% 75%;
+    transform: translateX(-50%) translateZ(calc((var(--size)*1.53)));
+    background-color: #fff;
+}
+
+.human .mouth::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: calc(var(--size)*-0.3);
+    left: 60%;
+    transform: translateX(-50%);
+    width: calc(var(--size)*0.5);
+    height: calc(var(--size)*0.5);
+    background-color: red;
+    border-radius: 50%;
+}
+
+.human .mouth::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: calc(var(--size)*-0.3);
+    left: 45%;
+    transform: translateX(-50%);
+    width: calc(var(--size)*0.5);
+    height: calc(var(--size)*0.5);
+    background-color: red;
+    border-radius: 50%;
 }
 
 
+/* F rotation */
 @media (max-width: 1300px) {
 
     /* bovenste rij */
@@ -653,6 +712,7 @@ main>section>div>div {
     }
 }
 
+/* middle rotation */
 @media (max-width: 1200px) {
 
     /* middelste rij */
@@ -669,6 +729,7 @@ main>section>div>div {
     }
 }
 
+/* back rotation */
 @media (max-width: 1100px) {
 
     /* onderste rij */
@@ -685,6 +746,7 @@ main>section>div>div {
     }
 }
 
+/* R' rotation */
 @media (min-width: 1400px) {
 
     .one-3,
@@ -700,7 +762,7 @@ main>section>div>div {
     }
 }
 
-
+/* F rotation after R' rotation */
 @media (min-width: 1500px) {
 
     .one-1,
@@ -734,6 +796,7 @@ main>section>div>div {
         opacity: 1;
     }
 
+    /* change clippaths so explosion appears */
     strong::after {
         transition: .3s ease-in-out;
         clip-path: polygon(63% 4%, 66% 37%, 99% 39%, 80% 63%, 83% 87%, 49% 79%, 10% 86%, 32% 57%, 2% 35%, 35% 27%);
@@ -748,7 +811,6 @@ main>section>div>div {
         transition: .6s ease-in-out;
         clip-path: polygon(59% 10%, 66% 37%, 99% 39%, 80% 63%, 90% 95%, 49% 67%, 8% 90%, 31% 57%, 3% 21%, 35% 27%)
     }
-
 
     main>span {
         opacity: 0;
@@ -770,6 +832,7 @@ main>section>div>div {
         --explode: 10;
     }
 
+    /* rotate cubies that stay in place when exploding */
     .one-5,
     .two-5,
     .three-5 {

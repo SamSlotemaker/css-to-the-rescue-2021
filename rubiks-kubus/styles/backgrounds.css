@@ -81,23 +81,23 @@ input[type="checkbox"]:nth-of-type(4):valid~section>div>div:nth-of-type(n+16)>sp
 }
 
 input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-1>span:nth-of-type(3) {
-    background-position: 0px 0px;
+    background-position: left top;
 }
 
 input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-2>span:nth-of-type(3) {
-    background-position: calc(var(--size)*-1) 0px;
+    background-position: center top;
 }
 
 input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-3>span:nth-of-type(3) {
-    background-position: calc(var(--size)*2*-1) 0px;
+    background-position: right top;
 }
 
 input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-4>span:nth-of-type(3) {
-    background-position: 0px calc(var(--size)*-1);
+    background-position: left center;
 }
 
 input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-5>span:nth-of-type(3) {
-    background-position: calc(var(--size)*-1) calc(var(--size)*-1);
+    background-position: center center;
 }
 
 input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-6>span:nth-of-type(3) {
