@@ -183,6 +183,10 @@ label:nth-of-type(4) {
     top: calc(10% + 15em);
 }
 
+label:nth-of-type(5) {
+    top: calc(10% + 20em);
+}
+
 /* SHADOW UNDER CUBE */
 main>span {
     display: block;
@@ -616,6 +620,25 @@ main>section>div>div {
 
 
 /* HUMAN */
+section>div>span {
+    opacity: 0;
+}
+
+/* make the human attributes visible */
+input:nth-of-type(5):valid~section>div>span:nth-of-type(1) {
+    opacity: 1;
+}
+
+input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .eye:before,
+input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .eye:after {
+    animation: rotateEyes 1s infinite linear;
+}
+
+input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
+    animation: rotateArm 1s linear infinite;
+
+}
+
 .human {
     position: relative;
     display: block;
@@ -624,15 +647,61 @@ main>section>div>div {
 }
 
 .human .eye {
+    z-index: 1;
     display: inline-block;
     position: absolute;
     transform: translateZ(calc((var(--size)*1.53)));
-    z-index: 10;
     top: 20%;
     width: calc(var(--size)/2);
     height: calc(var(--size)/2);
     background-color: white;
     border-radius: 50%;
+}
+
+.human .eye:before,
+.human .eye:after {
+    transform-origin: -1px;
+    animation: none;
+}
+
+@keyframes rotateEyes {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(360deg)
+    }
+}
+
+.human .eye::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: grey;
+    border-radius: 50%;
+    z-index: 1;
+    clip-path: inset(0 0 100% 0);
+    animation: blink 4s ease-in infinite;
+}
+
+@keyframes blink {
+    0% {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    3% {
+        clip-path: inset(0 0 0 0);
+    }
+
+    5% {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    100% {
+        clip-path: inset(0 0 100% 0);
+    }
 }
 
 .human .eye::after {
@@ -702,19 +771,31 @@ main>section>div>div {
     border: solid 5px #000;
     border-color: #000 transparent transparent transparent;
     border-radius: 50%/50px 50px 0 0;
-
+    animation: none;
 }
 
 .human .arm-1 {
+    --zTurn: -45deg;
     transform-origin: top right;
-    transform: translateY(50%) rotate(-45deg);
+    transform: translateY(50%) rotateX(0) rotate(var(--zTurn));
     left: -200px;
 }
 
 .human .arm-2 {
+    --zTurn: 45deg;
     transform-origin: top left;
-    transform: translateY(50%) rotate(45deg);
+    transform: translateY(50%) rotateX(0) rotate(var(--zTurn));
     right: -200px;
+}
+
+@keyframes rotateArm {
+    from {
+        transform: translateY(50%) rotateX(0) rotate(var(--zTurn));
+    }
+
+    to {
+        transform: translateY(50%) rotateX(360deg) rotate(var(--zTurn));
+    }
 }
 
 /* F rotation */
