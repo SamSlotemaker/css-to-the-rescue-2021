@@ -5,6 +5,8 @@
     --size: 100px;
     --offset: calc(var(--size)/2);
     --negative-offset: calc(var(--size)/2*-1);
+    --lightOrange: orange;
+    --bgc: rgb(64, 129, 131);
     --red: red;
     --blue: blue;
     --white: white;
@@ -25,7 +27,7 @@ body {
     display: grid;
     place-items: center;
     height: 100vh;
-    background-color: rgb(64, 129, 131);
+    background-color: var(--bgc);
 }
 
 
@@ -108,7 +110,7 @@ h2 {
 /* CHECKBOXES (BUTTONS) */
 
 label {
-    color: #408183;
+    color: var(--bgc);
     background-color: white;
     font-weight: bold;
     padding: 1em;
@@ -120,9 +122,13 @@ input[type="checkbox"] {
     left: -100vw;
 }
 
+input[type="checkbox"]:focus+label {
+    border: var(--lightOrange) 3px solid;
+}
+
 input[type="checkbox"]:checked+label {
     border: #408183 2px solid;
-    background-color: orange;
+    background-color: var(--lightOrange);
     color: white;
     box-shadow: inset 0 0 10px #408183;
 }
@@ -595,7 +601,7 @@ input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
     height: calc(var(--size)*3);
 }
 
-.human .eye {
+.human>span:nth-of-type(-n+2) {
     z-index: 1;
     display: inline-block;
     position: absolute;
@@ -607,17 +613,18 @@ input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
     border-radius: 50%;
 }
 
-.human .eye:before,
-.human .eye:after {
+.human>span:nth-of-type(-n+2):before,
+.human>span:nth-of-type(-n+2):after {
+    display: inline-block;
+    content: "";
+    position: absolute;
     transform-origin: -1px;
     animation: none;
 }
 
-.human .eye::before {
-    content: "";
+.human>span:nth-of-type(-n+2)::before {
     width: 100%;
     height: 100%;
-    position: absolute;
     background-color: grey;
     border-radius: 50%;
     z-index: 1;
@@ -626,10 +633,7 @@ input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
 }
 
 
-.human .eye::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
+.human>span:nth-of-type(-n+2)::after {
     top: 10px;
     right: 10px;
     width: calc(var(--size)/5);
@@ -638,15 +642,15 @@ input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
     border-radius: 50%;
 }
 
-.human .eye:nth-of-type(1) {
+.human>span:nth-of-type(1) {
     left: 20%;
 }
 
-.human .eye:nth-of-type(2) {
+.human>span:nth-of-type(2) {
     right: 20%;
 }
 
-.human .mouth {
+.human>span:nth-of-type(3) {
     display: inline-block;
     overflow: hidden;
     position: absolute;
@@ -659,7 +663,7 @@ input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
     background-color: #fff;
 }
 
-.human .mouth::after {
+.human>span:nth-of-type(3)::after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -672,7 +676,7 @@ input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
     border-radius: 50%;
 }
 
-.human .mouth::before {
+.human>span:nth-of-type(3)::before {
     content: "";
     display: inline-block;
     position: absolute;
@@ -685,7 +689,7 @@ input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
     border-radius: 50%;
 }
 
-.human .arm {
+.human>span:nth-of-type(n+4) {
     display: inline-block;
     position: absolute;
     width: 250px;
@@ -696,21 +700,99 @@ input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
     animation: none;
 }
 
-.human .arm-1 {
+.human>span:nth-of-type(4) {
     --zTurn: -45deg;
     transform-origin: top right;
     transform: translateY(50%) rotateX(0) rotate(var(--zTurn));
     left: -200px;
 }
 
-.human .arm-2 {
+.human>span:nth-of-type(5) {
     --zTurn: 45deg;
     transform-origin: top left;
     transform: translateY(50%) rotateX(0) rotate(var(--zTurn));
     right: -200px;
 }
 
+/* BACKGROUNDS */
 
+/* EIFFEL IMAGE */
+input[type="checkbox"]:nth-of-type(3):valid~section>div>div:nth-of-type(-n+9)>span:nth-of-type(6) {
+    background-image: url('./images/eiffel.png');
+    background-size: calc(var(--size)*3) calc(var(--size)*3);
+}
+
+/* GRADIENT */
+input[type="checkbox"]:nth-of-type(4):valid~section>div>div:nth-of-type(n+16)>span:nth-of-type(3) {
+    --aantalPunten: 30;
+    --kleur1: green;
+    --kleur2: rgb(1, 51, 1);
+    --hoek: calc(360deg/var(--aantalPunten));
+    background-image: repeating-conic-gradient(from var(--rotateDeg) at 50% 50%,
+            var(--kleur1) calc(var(--hoek)*1) calc(var(--hoek)*2),
+            var(--kleur2) calc(var(--hoek)*2) calc(var(--hoek)*3));
+    background-size: calc(var(--size)*3) calc(var(--size)*3);
+    animation: rotatingGradient 8s linear normal infinite;
+}
+
+/* remove color from :before elements to show images */
+input[type="checkbox"]:nth-of-type(3):valid~section>div>div:nth-of-type(-n+9)>span:nth-of-type(6):before,
+input[type="checkbox"]:nth-of-type(4):valid~section>div>div:nth-of-type(n+16)>span:nth-of-type(3):before {
+    background-color: transparent;
+}
+
+/* Place images according to the cubie placement */
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-1>span:nth-of-type(6),
+input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-1>span:nth-of-type(3) {
+    background-position: left top;
+}
+
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-2>span:nth-of-type(6),
+input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-2>span:nth-of-type(3) {
+    background-position: center top;
+}
+
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-3>span:nth-of-type(6),
+input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-3>span:nth-of-type(3) {
+    background-position: right top;
+}
+
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-4>span:nth-of-type(6),
+input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-4>span:nth-of-type(3) {
+    background-position: left center;
+}
+
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-5>span:nth-of-type(6),
+input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-5>span:nth-of-type(3) {
+    background-position: center center;
+}
+
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-6>span:nth-of-type(6),
+input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-6>span:nth-of-type(3) {
+    background-position: right center;
+}
+
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-7>span:nth-of-type(6),
+input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-7>span:nth-of-type(3) {
+    background-position: left bottom;
+}
+
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-8>span:nth-of-type(6),
+input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-8>span:nth-of-type(3) {
+    background-position: center bottom;
+}
+
+input[type="checkbox"]:nth-of-type(3):valid~section>div>.one-9>span:nth-of-type(6),
+input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-9>span:nth-of-type(3) {
+    background-position: right bottom;
+}
+
+/* remove gradient rotate */
+@media (prefers-reduced-motion) {
+    input[type="checkbox"]:nth-of-type(4):valid~section>div>div:nth-of-type(n+16)>span:nth-of-type(3) {
+        animation: none;
+    }
+}
 
 /* F rotation */
 @media (max-width: 1300px) {
@@ -943,5 +1025,22 @@ input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
 
     100% {
         clip-path: inset(0 0 100% 0);
+    }
+}
+
+/* turn with houdini @property */
+@property --rotateDeg {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0turn;
+}
+
+@keyframes rotatingGradient {
+    0% {
+        --rotateDeg: 0turn;
+    }
+
+    100% {
+        --rotateDeg: -1turn;
     }
 }

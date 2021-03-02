@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS 3D rubiks cube</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/backgrounds.css">
     <script src="script/script.js" defer></script>
 </head>
 
 <body>
 
-    <header></header>
-    <main>
+    <header>
         <h1>
             <div><span>R</span><span>U</span><span>B</span><span>I</span><span>K</span><span>S</span></div>
         </h1>
         <h2>CSS</h2>
-
+    </header>
+    <main>
         <input id="rotate" type="checkbox" required>
         <label for="rotate">Rotate</label>
         <input id="color" type="checkbox" required>
@@ -27,13 +26,12 @@
         <label for="images">Images</label>
         <input id="gradient" type="checkbox" required>
         <label for="gradient">Gradient</label>
-        <input id="human" type="checkbox" required>
+        <input id="human" type="checkbox" checked required>
         <label for="human">Human</label>
         <!-- CUBE -->
         <span></span>
         <p>Change the screensize to interact!</p>
         <section>
-
             <div>
                 <!-- HUMANLIKE THINGS -->
                 <span class="human">
@@ -292,7 +290,7 @@
             </div>
         </section>
         <div>
-            <strong>Boom! <span></span> </strong>
+            <strong>Boom!<span></span></strong>
         </div>
     </main>
     <footer></footer>
