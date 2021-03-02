@@ -613,16 +613,6 @@ input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
     animation: none;
 }
 
-@keyframes rotateEyes {
-    from {
-        transform: rotateZ(0deg);
-    }
-
-    to {
-        transform: rotateZ(360deg)
-    }
-}
-
 .human .eye::before {
     content: "";
     width: 100%;
@@ -915,6 +905,16 @@ input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
 
     to {
         opacity: 0;
+    }
+}
+
+@keyframes rotateEyes {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(360deg)
     }
 }
 
