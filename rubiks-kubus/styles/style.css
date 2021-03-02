@@ -132,17 +132,6 @@ input[type="checkbox"]:nth-of-type(1):valid~section>div {
     animation: rotating 3s linear infinite;
 }
 
-@keyframes rotating {
-    from {
-        transform: rotate3d(0);
-    }
-
-    to {
-        transform: rotate3d(1, 1, 1, 360deg);
-    }
-}
-
-
 input[type="checkbox"]:nth-of-type(2):valid~section>div {
     --red: #ff000088;
     --blue: #0000ff88;
@@ -201,21 +190,6 @@ main>span {
     transition: .3s ease-in-out;
 }
 
-@keyframes boxShadow {
-    0% {
-        box-shadow: 0 100px 48px 8px rgb(0 0 0);
-    }
-
-    50% {
-        box-shadow: 0 100px 63px 12px rgba(0, 0, 0, 0.829);
-    }
-
-    100% {
-        box-shadow: 0 100px 48px 8px rgb(0 0 0);
-    }
-}
-
-
 /* initial text message */
 p {
     z-index: 10;
@@ -244,16 +218,6 @@ p::before {
     border-left: white 30px solid;
     border-top: transparent 30px solid;
     border-bottom: transparent 30px solid;
-}
-
-@keyframes disappear {
-    from {
-        opacity: 1
-    }
-
-    to {
-        opacity: 0;
-    }
 }
 
 /* BOOM ANIMATION */
@@ -319,20 +283,6 @@ strong span {
 main>section {
     perspective: 200em;
     animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-    0% {
-        transform: translatey(0px);
-    }
-
-    50% {
-        transform: translatey(-20px);
-    }
-
-    100% {
-        transform: translatey(0px);
-    }
 }
 
 /* cube (cubie container) */
@@ -401,16 +351,16 @@ main>section>div>div>span:nth-of-type(6) {
     --wall-offset: var(--offset);
 }
 
-/* set color to before so i can incorporate border radius */
+/* set color to before so I can incorporate border radius */
 main>section>div>div>span::before {
     content: "";
     border-radius: calc(var(--size)/8);
     width: 100%;
     height: 100%;
-    background-color: red;
     position: absolute;
 }
 
+/* give all walls a color */
 main>section>div>div>span:nth-of-type(1):before {
     background-color: var(--white);
 }
@@ -441,11 +391,10 @@ main>section>div>div>span:nth-of-type(6):before {
 
 main>section>div>div {
     transition: transform .6s cubic-bezier(0.175, 0.885, 0.320, 1.275);
-    ;
 }
 
 :root {
-    --explode: 1
+    --explode: 1;
 }
 
 main>section>div>div {
@@ -686,23 +635,6 @@ input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
     animation: blink 4s ease-in infinite;
 }
 
-@keyframes blink {
-    0% {
-        clip-path: inset(0 0 100% 0);
-    }
-
-    3% {
-        clip-path: inset(0 0 0 0);
-    }
-
-    5% {
-        clip-path: inset(0 0 100% 0);
-    }
-
-    100% {
-        clip-path: inset(0 0 100% 0);
-    }
-}
 
 .human .eye::after {
     content: "";
@@ -788,15 +720,7 @@ input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
     right: -200px;
 }
 
-@keyframes rotateArm {
-    from {
-        transform: translateY(50%) rotateX(0) rotate(var(--zTurn));
-    }
 
-    to {
-        transform: translateY(50%) rotateX(360deg) rotate(var(--zTurn));
-    }
-}
 
 /* F rotation */
 @media (max-width: 1300px) {
@@ -942,5 +866,82 @@ input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
         --rotateZ: 90deg;
         --rotateY: 90deg;
         --rotateX: 90deg;
+    }
+}
+
+/* ANIMATOINS */
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-20px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate3d(0);
+    }
+
+    to {
+        transform: rotate3d(1, 1, 1, 360deg);
+    }
+}
+
+@keyframes boxShadow {
+    0% {
+        box-shadow: 0 100px 48px 8px rgb(0 0 0);
+    }
+
+    50% {
+        box-shadow: 0 100px 63px 12px rgba(0, 0, 0, 0.829);
+    }
+
+    100% {
+        box-shadow: 0 100px 48px 8px rgb(0 0 0);
+    }
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes rotateArm {
+    from {
+        transform: translateY(50%) rotateX(0) rotate(var(--zTurn));
+    }
+
+    to {
+        transform: translateY(50%) rotateX(360deg) rotate(var(--zTurn));
+    }
+}
+
+@keyframes blink {
+    0% {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    3% {
+        clip-path: inset(0 0 0 0);
+    }
+
+    5% {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    100% {
+        clip-path: inset(0 0 100% 0);
     }
 }
