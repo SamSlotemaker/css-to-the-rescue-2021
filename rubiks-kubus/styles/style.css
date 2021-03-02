@@ -603,6 +603,7 @@ section>div>span {
     height: calc(var(--size)/2);
     background-color: white;
     border-radius: 50%;
+    backface-visibility: hidden;
 }
 
 .human>span:nth-of-type(-n+2):before,
@@ -612,6 +613,7 @@ section>div>span {
     position: absolute;
     transform-origin: -1px;
     animation: none;
+    backface-visibility: hidden;
 }
 
 .human>span:nth-of-type(-n+2)::before {
