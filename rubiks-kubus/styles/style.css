@@ -126,6 +126,10 @@ input[type="checkbox"]:focus+label {
     border: var(--lightOrange) 3px solid;
 }
 
+input[type="checkbox"]:checked:focus+label {
+    border: white 3px solid;
+}
+
 input[type="checkbox"]:checked+label {
     border: #408183 2px solid;
     background-color: var(--lightOrange);
@@ -149,7 +153,6 @@ input[type="checkbox"]:nth-of-type(2):valid~section>div {
 
 input[type="checkbox"]:nth-of-type(2):valid~section>div>div>span {
     background-color: transparent;
-
 }
 
 /* POSITION LABELS */
@@ -573,25 +576,9 @@ main>section>div>div {
     --z: -1;
 }
 
-
 /* HUMAN */
 section>div>span {
     opacity: 0;
-}
-
-/* make the human attributes visible */
-input:nth-of-type(5):valid~section>div>span:nth-of-type(1) {
-    opacity: 1;
-}
-
-input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .eye:before,
-input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .eye:after {
-    animation: rotateEyes 1s infinite linear;
-}
-
-input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
-    animation: rotateArm 1s linear infinite;
-
 }
 
 .human {
@@ -631,7 +618,6 @@ input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
     clip-path: inset(0 0 100% 0);
     animation: blink 4s ease-in infinite;
 }
-
 
 .human>span:nth-of-type(-n+2)::after {
     top: 10px;
@@ -712,6 +698,20 @@ input:nth-of-type(1):valid~section>div>span:nth-of-type(1) .arm {
     transform-origin: top left;
     transform: translateY(50%) rotateX(0) rotate(var(--zTurn));
     right: -200px;
+}
+
+/* make the human attributes visible on checked box*/
+input:nth-of-type(5):valid~section>div>span:nth-of-type(1) {
+    opacity: 1;
+}
+
+/* rotate eyes and arm when cube is rotating */
+input:nth-of-type(1):valid~section>div>span:nth-of-type(1)>span:nth-of-type(-n+2):after {
+    animation: rotateEyes 1s infinite linear;
+}
+
+input:nth-of-type(1):valid~section>div>span:nth-of-type(1)>span:nth-of-type(n+4) {
+    animation: rotateArm 1s linear infinite;
 }
 
 /* BACKGROUNDS */
@@ -992,11 +992,11 @@ input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-9>span:nth-of-typ
 
 @keyframes rotateEyes {
     from {
-        transform: rotateZ(0deg);
+        transform: rotateZ(0deg) translateZ(calc((var(--size)*1.53)));
     }
 
     to {
-        transform: rotateZ(360deg)
+        transform: rotateZ(360deg) translateZ(calc((var(--size)*1.53)));
     }
 }
 
