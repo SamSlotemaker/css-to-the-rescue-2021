@@ -594,6 +594,7 @@ section>div>span {
 
 /* EYES */
 .human>span:nth-of-type(-n+2) {
+    transform-style: preserve-3d;
     z-index: 1;
     display: inline-block;
     position: absolute;
@@ -1006,11 +1007,11 @@ input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-9>span:nth-of-typ
 
 @keyframes rotateEyes {
     from {
-        transform: rotateZ(0deg) translateZ(calc((var(--size)*1.53)));
+        transform: rotateZ(0deg);
     }
 
     to {
-        transform: rotateZ(360deg) translateZ(calc((var(--size)*1.53)));
+        transform: rotateZ(360deg);
     }
 }
 
