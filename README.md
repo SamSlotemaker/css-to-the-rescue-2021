@@ -1,5 +1,5 @@
 # CSS to the rescue
-![rubiksImg](https://www.novagraaf.com/sites/default/files/styles/832x468_16x9_/public/2019-11/jean-louis-paulin-lHwmE58fW4Y-unsplash.jpg?itok=p56wLOV3)
+![rubiksImg](./rubiks-kubus/styles/images/cubeGif.gif)
 
 ## Table of contents
 * [Description](#Description)
