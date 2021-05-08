@@ -8,7 +8,7 @@
 * [Sources](#Sources)
 
 ## Live Demo
-Visit the live demo [Here](https://samslotemaker.github.io/css-to-the-rescue-2021/rubiks-kubus/)
+Visit the live demo [Here](https://samslotemaker.github.io/CSS-Rubiks-Cube/rubiks-kubus/)
 
 ## Process
 I will describe my process in the Wiki of this repository, which you can visit [here](https://github.com/SamSlotemaker/css-to-the-rescue-2021/wiki)

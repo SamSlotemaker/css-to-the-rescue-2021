@@ -411,7 +411,7 @@ main>section>div>div {
 }
 
 main>section>div>div {
-    transform: rotateY(var(--rotateY, 0)) rotateX(var(--rotateX, 0)) rotateZ(var(--rotateZ, 0)) translateX(calc(var(--x)*var(--size)*var(--explode))) translateY(calc(var(--y)*var(--size)*var(--explode))) translateZ(calc(var(--z)*var(--size)*var(--explode)))
+    transform: rotateY(var(--rotateY, 0)) rotateX(var(--rotateX, 0)) rotateZ(var(--rotateZ, 0)) translateX(calc(var(--x, 0)*var(--size)*var(--explode))) translateY(calc(var(--y)*var(--size)*var(--explode))) translateZ(calc(var(--z)*var(--size)*var(--explode)))
 }
 
 /* bovenste rij */
@@ -422,7 +422,6 @@ main>section>div>div {
 }
 
 .one-2 {
-    --x: 0;
     --y: -1;
     --z: 1;
 }
@@ -604,7 +603,6 @@ section>div>span {
     height: calc(var(--size)/2);
     background-color: white;
     border-radius: 50%;
-    backface-visibility: hidden;
 }
 
 .human>span:nth-of-type(-n+2):before,
@@ -614,7 +612,6 @@ section>div>span {
     position: absolute;
     transform-origin: -1px;
     animation: none;
-    backface-visibility: hidden;
 }
 
 .human>span:nth-of-type(-n+2)::before {
@@ -956,7 +953,7 @@ input[type="checkbox"]:nth-of-type(4):valid~section>div>.three-9>span:nth-of-typ
     }
 }
 
-/* ANIMATOINS */
+/* ANIMATIONS */
 @keyframes float {
     0% {
         transform: translatey(0px);
